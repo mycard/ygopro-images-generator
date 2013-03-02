@@ -1,0 +1,36 @@
+﻿
+############################################################## Set fields
+set field:
+	type: info
+	name: 信息设置
+set field:
+	type: text
+	name: 密码
+	description: 卡片的唯一密码 最少8位
+set field:
+	type: text
+	name: 卡包
+	description: 例如JP02-XM001，JP是地区。
+set field:
+	type: text
+	name: 卡包说明
+	description: 例如DUEL TERMINAL
+set field:
+	type: text
+	name: 版权
+	description: 右下角的版权声明 (c)
+set field:
+	type: text
+	name: 备注
+	description: 卡片的说明
+set field:
+	type: text
+	name: 调整
+	multi line: true
+	description: DIY卡片的调整
+############################# Default style
+default set style:
+	备注:
+		padding left: 2
+		font:
+			size: 16

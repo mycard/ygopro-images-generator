@@ -1,0 +1,127 @@
+﻿mse version: 2.0.0
+version: 2013-02-08
+short name: caicai
+position hint: 001
+icon: star.png
+installer group: Yugioh/Symbol Fonts/caicai
+# Symbol font for level symbols
+
+##图像默认大小
+image font size: 16
+##水平间隔 
+horizontal space: 3.7
+symbol:
+	code: 永续
+	image: 永续.png
+symbol:
+	code: 速攻
+	image: 速攻.png
+symbol:
+	code: 装备
+	image: 装备.png
+symbol:
+	code: 场地
+	image: 场地.png
+symbol:
+	code: 反击
+	image: 反击.png
+symbol:
+	code: 仪式
+	image: 仪式.png
+symbol:
+	code: [
+	image: leftbracket.png
+	image font size: 22
+symbol:
+	code: ]
+	image: rightbracket.png
+	image font size: 22
+symbol:
+	code: *
+	image: dstar.png
+	enabled: {card.card_type=="黑暗同调怪兽"}
+	image font size: 17.5
+symbol:
+	code: *
+	image: cstar.png
+	enabled: {card.card_type=="超量怪兽"}
+	image font size: 17.8
+symbol:
+	code: *
+	image: tstar.png
+	enabled: {styling.星星样式=="蓝白星星"}
+	image font size: 17.8
+symbol:
+	code: *
+	image: zstar.png
+	enabled: {styling.星星样式=="ZZ星星"}
+	image font size: 17
+symbol:
+	code: *
+	image: star2.png
+	enabled: {styling.星星样式=="旧版星星"}
+	image font size: 17
+symbol:
+	code: *
+	image: star.png
+	image font size: 17
+symbol:
+	code: !
+	image: 速攻魔法.png
+	image font size: 13.5
+symbol:
+	code: +
+	image: 装备魔法.png
+	image font size: 13.5
+symbol:
+	code: &
+	image: 场地魔法.png
+	image font size: 13.5
+symbol:
+	code: #
+	image: 仪式魔法.png
+	image font size: 13.5
+symbol:
+	code: %
+	image: 永续陷阱.png
+	enabled: {card.card_type=="陷阱"}
+	image font size: 13.5
+symbol:
+	code: %
+	image: 永续魔法.png
+	image font size: 13.5
+symbol:
+	code: ^
+	image: 通常陷阱.png
+	enabled: {card.card_type=="陷阱"}
+	image font size: 13
+symbol:
+	code: ^
+	image: 通常魔法.png
+	image font size: 13.5
+symbol:
+	code: $
+	image: 反击陷阱.png
+	image font size: 13.5
+
+##############################################################
+# Insert-symbol menu
+insert symbol menu:
+	item: 速攻
+	item: 场地
+	item: 装备
+	item: 仪式
+	item: 永续
+	item: 反击
+	item: 永续
+	item: %
+	item: !
+	item: +
+	item: &
+	item: $
+	item: #
+	item: ^
+	item: [
+	item: ]
+	item: *
+

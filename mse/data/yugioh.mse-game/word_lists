@@ -1,0 +1,182 @@
+﻿
+############################################################## Word lists
+word list:
+	name: monster
+	word: Aqua
+	word: Beast
+	word: Beast-Warrior
+	word: Dinosaur
+	word: Divine-Beast
+	word: Dragon
+	word: Fairy
+	word: Fiend
+	word: Fish
+	word: Insect
+	word: Legendary-Dragon
+	word: Machine
+	word: Plant
+	word: Pyro
+	word: Psychic
+	word: Reptile
+	word: Rock
+	word: Sea Serpent
+	word: Spellcaster
+	word: Thunder
+	word: Warrior
+	word: Winged Beast
+	word: Zombie
+	word: Created-Divine 
+word list:
+	name: card
+	word: Xyz
+	word: Effect
+	word: Fusion
+	word: Gemini
+	word: Ritual
+	word: Spirit
+	word: Synchro
+	word: Toon
+	word: Tuner
+	word: Union
+	word: Dark Synchro
+	word: Dark Tuner
+word list:
+	name: c
+	word: Effect
+	word: Tuner
+word list:
+	name: monster2
+	word: 水族
+	word: 兽族
+	word: 兽战士族
+	word: 恐龙族
+	word: 幻神兽族
+	word: 龙族
+	word: 天使族
+	word: 恶魔族
+	word: 鱼族
+	word: 昆虫族
+	word: 传说之龙
+	word: 机械族
+	word: 植物族
+	word: 炎族
+	word: 念动力族
+	word: 爬虫类族
+	word: 岩石族
+	word: 海龙族
+	word: 魔法使族
+	word: 雷族
+	word: 战士族
+	word: 鸟兽族
+	word: 不死族
+	word: 创造神族
+word list:
+	name: card2
+	word:同调
+	word:超量
+	word:融合
+	word:仪式
+	word:效果
+	word:调整
+	word:灵魂
+	word:卡通
+	word:二重
+	word:同盟
+	word:黑暗同调
+	word:黑暗调整
+word list:
+	name: c2
+	word:调整
+	word:效果
+
+word list:
+	name: monster3
+	word: 水族
+	word: 獸族
+	word: 獸戰士族
+	word: 恐龍族
+	word: 幻神獸族
+	word: 龍族
+	word: 天使族
+	word: 惡魔族
+	word: 魚族
+	word: 昆蟲族
+	word: 傳說之龍
+	word: 機械族
+	word: 植物族
+	word: 炎族
+	word: 念動力族
+	word: 爬蟲類族
+	word: 岩石族
+	word: 海龍族
+	word: 魔法使族
+	word: 雷族
+	word: 戰士族
+	word: 鳥獸族
+	word: 不死族
+	word: 創造神族
+word list:
+	name: card3
+	word:同調
+	word:超量
+	word:融合
+	word:儀式
+	word:調整
+	word:效果
+	word:靈魂
+	word:卡通
+	word:二重
+	word:同盟
+	word:黑暗同調
+	word:黑暗調整
+word list:
+	name: c3
+	word:調整
+	word:效果
+
+word list:
+	name: monster4
+	word: 水族
+	word: 獸族
+	word: 獸戰士族
+	word: 恐竜族
+	word: 幻神獸族
+	word: ドラゴン族
+	word: 天使族
+	word: 惡魔族
+	word: 魚族
+	word: 昆虫族
+	word: 伝説の竜
+	word: 機械族
+	word: 植物族
+	word: 炎族
+	word: サイキック族
+	word: 爬虫類族
+	word: 岩石族
+	word: 海竜族
+	word: 魔法使い族
+	word: 雷族
+	word: 戰士族
+	word: 鳥獸族
+	word: 不死族
+	word: 創造神族
+word list:
+	name: card4
+	word:シンクロ
+	word:エクシーズ
+	word:融合
+	word:儀式
+	word:効果
+	word:チューナー
+	word:スピリット
+	word:トゥーン
+	word:デュアル
+	word:同盟
+	word:ダークシンクロ
+	word:ダークチューナー
+word list:
+	name: c4
+	word:チューナー
+	word:効果
+
+

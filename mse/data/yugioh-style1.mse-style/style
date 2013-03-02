@@ -1,0 +1,548 @@
+﻿mse version: 0.3.8
+game: yugioh
+short name: 风格1
+installer group: Yugioh/style1
+icon: card-sample.png
+position hint: 02
+
+version: 2013-02-08
+depends on:
+	package: yugioh.mse-game
+	version: 2013-02-08
+depends on:
+	package: yugioh-caicai-levels.mse-symbol-font
+	version: 2013-02-08
+depends on:
+	package: yugioh-text-replacements.mse-symbol-font
+	version: 2008-01-04
+
+card width: 421
+card height: 614
+card dpi: 180.6265
+
+############################################################## Extra scripts
+############################################################## Extra style
+styling field:
+	type: choice
+	name: 卡片语言
+	description: 日文（无法显示简体），日文拥有片假名注音
+	initial: 简体
+	choice: 简体
+	choice: 日文
+	choice: 英文
+styling field:
+	type: choice
+	name: 图片显示
+	description: 请选择本选项再选择图片，否则图片会模糊，变形。
+	initial: 默认
+	choice: 默认
+	choice: 隐藏边框
+	choice: 透明卡图
+styling field:
+	type: choice
+	name: 星星样式
+	description: 请选择本选项再选择图片，否则图片会模糊，变形。
+	initial: 默认
+	choice: 默认星星
+	choice: 蓝白星星
+	choice: 旧版星星
+styling field:
+	type: choice
+	name: 罕见度
+	description: 黄金闪图只支持默认风格
+	initial: 无
+	choice: 无
+	choice: 斜碎
+	choice: 闪图
+	choice: DT闪图
+	choice: 黄金闪图
+styling field:
+	type: choice
+	name: 魔陷括号
+	description: 魔法陷阱的括号，不包括种族的。
+	initial: 居中
+	choice: 偏下
+	choice: 居中
+styling field:
+	type: choice
+	name: 效果字体大小
+	description: 日文只能正常显示繁体，日文拥有片假名注音
+	initial: 8
+	choice: 6
+	choice: 6.5
+	choice: 7
+	choice: 7.5
+	choice: 8
+	choice: 8.5
+
+styling field:
+	type: choice
+	name: 卡名颜色
+	description: 卡片名字颜色
+	initial: 默认
+	choice: 默认
+	choice: 白色
+	choice: 红色
+	choice: 银色
+	choice: 金色
+styling field:
+	type: choice
+	name: 卡包说明颜色
+	description: 卡包说明的颜色，就是DUEL TERMINAL的位置。
+	initial: 默认
+	choice: 白色
+	choice: 金色
+	choice: 默认
+styling field:
+	type: choice
+	name: 卡包颜色
+	description: 卡包编号的颜色。XM02-JP002
+	initial: 默认
+	choice: 白色
+	choice: 金色
+	choice: 默认
+styling field:
+	type: choice
+	name: 密码颜色
+	description: 左下角的密码
+	initial: 默认
+	choice: 白色
+	choice: 金色
+	choice: 默认
+styling field:
+	type: choice
+	name: 版权颜色
+	description: 右下角的版权说明颜色
+	initial: 默认
+	choice: 白色
+	choice: 金色
+	choice: 默认
+
+styling field:
+	type: boolean
+	name: 其他标注
+	description: 就是ATK/ DEF/
+	initial: no
+styling field:
+	type: boolean
+	name: 划线
+	description: 在ATK/ DEF/ 的上方划线？
+	initial: no
+styling field:
+	type: boolean
+	name: 自动效果符号
+	description: 效果栏的符号自动替换，建议开启
+	initial: yes
+styling field:
+	type: boolean
+	name: 效果字体调整
+	description: 限制效果文字在框内
+	initial: yes
+
+############################################################## Card fields
+card style:
+	############################# Background stuff
+	card type:
+		left: 0
+		top: 0
+		width: 421
+		height: 614
+		z index: -2
+		render style: image
+		popup style: in place
+		choice images:
+			效果怪兽: card-effect.png
+			超量怪兽: card-xyz.png
+			同调怪兽: card-synchro.png
+			融合怪兽: card-fusion.png
+			魔法: card-spell.png
+			陷阱: card-trap.png
+			仪式怪兽: card-ritual.png
+			通常怪兽: card-normal.png
+			黑暗同调怪兽: card-dsynchro.png
+			衍生物: card-token.png
+			巨神兵: card-obelisk.png
+			天空龙: card-slifer.png
+			翼神龙: card-ra.png
+			传说之龙: card-dragons.png
+	foils:
+		left: { if styling.图片显示=="隐藏边框" then 52 else if styling.罕见度=="DT闪图" then 0 else if styling.罕见度=="黄金闪图" then 0  else 59.5 }
+		top: { if styling.图片显示=="隐藏边框" then 119 else if styling.罕见度=="DT闪图" then 0 else if styling.罕见度=="黄金闪图" then 0 else 127 }
+		width: { if styling.图片显示=="隐藏边框" then 316 else if styling.罕见度=="DT闪图" then 421 else if styling.罕见度=="黄金闪图" then 421 else 302.5 }
+		height: { if styling.图片显示=="隐藏边框" then 319 else if styling.罕见度=="DT闪图" then 614 else if styling.罕见度=="黄金闪图" then 614 else 304.5 }
+		z index: 5
+		render style: image
+		popup style: in place
+		image:
+			script:	if styling.罕见度=="闪图" then "/yugioh-caicai-levels.mse-symbol-font/superfoil.png" else
+				if styling.罕见度=="斜碎" then "/yugioh-caicai-levels.mse-symbol-font/secretfoil.png" else
+				if styling.罕见度=="DT闪图" then "/yugioh-caicai-levels.mse-symbol-font/parallelfoil.png" else
+				if styling.罕见度=="黄金闪图" then "goldfoil.png" else "/yugioh-caicai-levels.mse-symbol-font/blank.png"
+
+	############################# Name line
+	name:
+		left: 36
+		top : {if styling.卡片语言=="日文" then 34 else 33}
+		width: 303
+		height: {if styling.卡片语言=="日文" then 36 else 38}
+		alignment: middle shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: {if styling.卡片语言=="英文" then "MatrixRegularSmallCaps" else if styling.卡片语言=="日文" then "DFP菜菜" else "YGO菜菜"}
+			size: {if styling.卡片语言=="日文" then "24" else if styling.卡片语言=="英文" then "28" else "26" }
+			color:
+				script: if styling.卡名颜色=="银色" then rgb(230,230,230)
+				else if styling.卡名颜色=="金色" then rgb(216,199,53)
+				else if styling.卡名颜色=="白色" then rgb(255,255,255)
+				else if styling.卡名颜色=="红色" then rgb(60,0,0)
+				else if card.card_type=="黑暗同调怪兽" then rgb(255,255,255)
+				else if card.card_type=="超量怪兽" then rgb(255,255,255)
+				else if is_nmonster() then rgb(255,255,255)
+				else rgb(0,0,0)
+	attribute:
+		left: 345
+		top : 31
+		width: 40
+		height: 40
+		z index: 2
+		render style: image
+		popup style: in place
+		choice images:
+			地: /yugioh-caicai-levels.mse-symbol-font/地.png
+			水: /yugioh-caicai-levels.mse-symbol-font/水.png
+			炎: /yugioh-caicai-levels.mse-symbol-font/炎.png
+			风: /yugioh-caicai-levels.mse-symbol-font/风.png
+			光: /yugioh-caicai-levels.mse-symbol-font/光.png
+			暗: /yugioh-caicai-levels.mse-symbol-font/暗.png
+			神: /yugioh-caicai-levels.mse-symbol-font/神.png
+			魔法: /yugioh-caicai-levels.mse-symbol-font/魔.png
+			陷阱: /yugioh-caicai-levels.mse-symbol-font/陷.png
+			earth: /yugioh-caicai-levels.mse-symbol-font/earth.png
+			water: /yugioh-caicai-levels.mse-symbol-font/water.png
+			fire: /yugioh-caicai-levels.mse-symbol-font/fire.png
+			wind: /yugioh-caicai-levels.mse-symbol-font/wind.png
+			light: /yugioh-caicai-levels.mse-symbol-font/light.png
+			dark: /yugioh-caicai-levels.mse-symbol-font/dark.png
+			divine: /yugioh-caicai-levels.mse-symbol-font/divine.png
+			spell: /yugioh-caicai-levels.mse-symbol-font/spell.png
+			trap: /yugioh-caicai-levels.mse-symbol-font/trap.png
+	level:
+		left: { if card.card_type=="黑暗同调怪兽" then 47 else if card.card_type=="超量怪兽" then 47 else 30}
+		top : {if is_nmonster() then if styling.卡片语言=="英文" then 82.5 else 81.5 else 81.5 }
+		height: 33
+		width: {if is_nmonster() then if styling.卡片语言=="英文" then 335 else 336 else 342 }
+		z index: 2
+		alignment: { if card.card_type=="黑暗同调怪兽" then "middle left" else if card.card_type=="超量怪兽" then "middle left" else "middle right" }
+		font:
+			name: {if styling.卡片语言=="英文" then "MatrixBoldSmallCaps" else if styling.卡片语言=="日文" then "DFP菜菜" else "YGO菜菜"}
+			italic name: Matrix
+			size: {if styling.卡片语言=="英文" then "20" else "18"}
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-caicai-levels
+			alignment: middle center
+			scale down to: 1
+			size: 7.5
+	############################# Image
+	image:
+		left: {if styling.图片显示=="隐藏边框" then 52 else if styling.图片显示=="透明卡图" then 14 else 59.5 }
+		top: {if styling.图片显示=="隐藏边框" then 119 else if styling.图片显示=="透明卡图" then 15 else 127.5 }
+		width: {if styling.图片显示=="隐藏边框" then 316 else if styling.图片显示=="透明卡图" then 392 else 302.5 }
+		height: {if styling.图片显示=="隐藏边框" then 319 else if styling.图片显示=="透明卡图" then 585 else 304.5 }
+		z index: 1
+	image2:
+		left: 29
+		top: 23
+		width: 368
+		height: 58
+		z index: 2
+		render style: image list
+		choice images:
+			透明卡名: /yugioh-caicai-levels.mse-symbol-font/卡名.png
+		visible: script: if styling.图片显示=="透明卡图" then true else false
+	image3:
+		left: 20
+		top: 447
+		width: 381
+		height: 142
+		z index: 2
+		render style: image list
+		choice images:
+			透明文字: /yugioh-caicai-levels.mse-symbol-font/文字.png
+		visible: script: if styling.图片显示=="透明卡图" then true else false
+	############################# Card type
+	monster type:
+		left: 43
+		top : 465
+		width: { card_style.monster_type.content_width + 7 }
+		height: 15
+		alignment: middle left
+		z index: 2
+		font:
+			name: {if styling.卡片语言=="英文" then "MatrixBoldSmallCaps" else if styling.卡片语言=="日文" then "DFP菜菜" else "YGO菜菜"}
+			italic name: Matrix
+			size: {if styling.卡片语言=="英文" then "11.5" else "10.6" }
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-text-replacements
+			alignment: middle center
+			size: 3
+		visible: script: if is_nmonster() then false else true
+	############################# Edition and Card ID
+	number:
+		left: 235
+		top : 439
+		width: 134
+		height: 17
+		z index: 3
+		alignment: top right
+		font:
+			name: Palatino Linotype
+			size: 9
+			color: 
+				script: if styling.卡包颜色=="金色" then rgb(216,199,53) else if styling.卡包颜色=="白色" then rgb(255,255,255)
+				else if card.card_type=="黑暗同调怪兽" then rgb(255,255,255) else if card.card_type=="超量怪兽" then rgb(255,255,255)
+				else rgb(0,0,0)
+	edition:
+		left: 49
+		top: 439
+		width: 134
+		height: 17
+		z index: 3
+		font:
+			name: { if card.edition=="DUEL TERMINAL" then "BankGothic Md BT" else "Palatino Linotype Bold" }
+			size: { if card.edition=="DUEL TERMINAL" then "12" else "8" }
+			color: 
+				script: if styling.卡包说明颜色=="金色" then rgb(216,199,53) else if styling.卡包说明颜色=="白色" then rgb(255,255,255)
+				else if card.card_type=="黑暗同调怪兽" then rgb(255,255,255) else if card.card_type=="超量怪兽" then rgb(255,255,255)
+				else rgb(0,0,0)
+	############################# Text box
+	rule text:
+		left: 36
+		top :
+			script: if is_nmonster() then 462 else 481
+		width: 347
+		height:
+			script: if is_nmonster() then 114 else 75
+		font:
+			name: {if styling.卡片语言=="英文" then "MatrixBook" else if styling.卡片语言=="日文" then "DFP菜菜" else "YGO菜菜" }
+			size: { if styling.效果字体大小=="7" then "7" else if styling.效果字体大小=="8" then "8" else if styling.效果字体大小=="8.5" then "8.5" else if styling.效果字体大小=="6" then "6" else if styling.效果字体大小=="6.5" then "6.5" else if styling.效果字体大小=="7.5" then "7.5" else "8"}
+			scale down to: 4
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-text-replacements
+			alignment: middle center
+			size: 3.5
+		alignment: { if styling.效果字体调整=="yes" then "top left justify" else "top left" }
+		z index: 3
+		padding left: 1.5
+		padding top: 2
+		padding right: 0
+		padding bottom: 1
+		line height hard: 1.0
+		line height line: 1.0
+		line height soft: 0.9
+		line height hard max: 1.1
+		line height line max: 1.1
+	############################# Attack/Defense
+	attack:
+		left: 227
+		top: 557.5
+		width: 68
+		height: 21
+		z index: 2
+		alignment: right middle
+		font:
+			name: MatrixBoldSmallCaps
+			italic name: Matrix-Bold
+			size: 14
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-text-replacements
+			alignment: middle center
+			size: 6
+		visible: script: if is_nmonster() then false else true
+	defense:
+		left: 313
+		top: 557.5
+		width: 68
+		height: 21
+		z index: 2
+		alignment: right middle
+		font:
+			name: MatrixBoldSmallCaps
+			italic name: Matrix-Bold
+			size: 14
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-text-replacements
+			alignment: middle center
+			size: 6
+		visible: script: if is_nmonster() then false else true
+	############################# Card sorting / numbering
+	############################# Copyright stuff
+	gamecode:
+		left: 20
+		top : 581
+		width: 112
+		height: 21
+		alignment: middle left
+		z index: 2
+		font:
+			name: Palatino Linotype
+			size: 9
+			color: 
+				script: if styling.密码颜色=="金色" then rgb(216,199,53) else if styling.密码颜色=="白色" then rgb(255,255,255)
+				else if card.card_type=="黑暗同调怪兽" then rgb(255,255,255) else if card.card_type=="超量怪兽" then rgb(255,255,255)
+				else rgb(0,0,0)
+	rarity2:
+		left: 387
+		top : 580
+		height: 20
+		width: 20
+		z index: 5
+		render style: image
+		popup style: in place
+		choice images:
+			无防伪: /yugioh-caicai-levels.mse-symbol-font/wu.png
+			暗防伪: /yugioh-caicai-levels.mse-symbol-font/暗防伪.png
+			亮防伪: /yugioh-caicai-levels.mse-symbol-font/亮防伪.png
+			金防伪: /yugioh-caicai-levels.mse-symbol-font/金防伪.png
+	copyright:
+		left: 210
+		top : 581
+		width: 169
+		height: 22
+		z index: 4
+		alignment: middle right
+		font:
+			name: { if styling.卡片语言=="英文" then "Palatino Linotype Bold" else "DFHSGothic"}
+			size: { if card.copyright=="©1996 KAZUKI TAKAHASHI" then "8" else "6.5" }
+			color: 
+				script: if styling.版权颜色=="金色" then rgb(216,199,53) else if styling.版权颜色=="白色" then rgb(255,255,255)
+				else if card.card_type=="黑暗同调怪兽" then rgb(255,255,255) else if card.card_type=="超量怪兽" then rgb(255,255,255)
+				else rgb(0,0,0)
+	bar:
+		left: 43
+		top : 558
+		height: 1
+		width: 336
+		z index: 4
+		render style: image list
+		choice images:
+			bar: /yugioh-caicai-levels.mse-symbol-font/bar.png
+		visible: script: if is_nmonster() then false else if styling.划线=="no" then false else true
+	leftbracket:
+		left: { if is_nmonster() then if styling.卡片语言=="日文" then (361 - card_style.level.content_width) else if styling.卡片语言=="英文" then (359 - card_style.level.content_width) else (361 - card_style.level.content_width) else 38 }
+		top : { if is_nmonster() then if styling.卡片语言=="日文" then 90 else if styling.魔陷括号=="偏下" then 90 else 88 else if styling.卡片语言=="日文" then  466 else  465 }
+		height: { if is_nmonster() then if styling.卡片语言=="日文" then 21 else if styling.魔陷括号=="偏下" then 21 else 21 else if styling.卡片语言=="日文" then 13 else 15 }
+		width: { if is_nmonster() then 6 else 5.5 }
+		z index: 2
+		render style: image list
+		choice images:
+			lbracket: /yugioh-caicai-levels.mse-symbol-font/leftbracket.png
+			lbracket2: /yugioh-caicai-levels.mse-symbol-font/左括号.png
+	rightbracket:
+		left: { if is_nmonster() then if styling.卡片语言=="英文" then 365  else 364 else (card_style.monster_type.content_width + 43) }
+		top : { if is_nmonster() then if styling.卡片语言=="日文" then 90 else if styling.魔陷括号=="偏下" then 90 else 88 else if styling.卡片语言=="日文" then  466 else  465 }
+		height: { if is_nmonster() then if styling.卡片语言=="日文" then 21 else if styling.魔陷括号=="偏下" then 21 else 21 else if styling.卡片语言=="日文" then 13 else 15 }
+		width: { if is_nmonster() then 6 else 5.5 }
+		z index: 2
+		render style: image list
+		choice images:
+			rbracket: /yugioh-caicai-levels.mse-symbol-font/rightbracket.png
+			rbracket2: /yugioh-caicai-levels.mse-symbol-font/右括号.png
+	atkoverlay:
+		left: 187
+		top: 557
+		width: 70
+		height: 21
+		z index: 2
+		alignment: right middle
+		font:
+			name: MatrixBoldSmallCaps
+			italic name: Matrix-Bold
+			size: 14
+			color: rgb(0,0,0)
+		visible: script: if is_nmonster() then false else if styling.其他标注=="no" then false else true
+	defoverlay:
+		left: 274
+		top: 557
+		width: 70
+		height: 21
+		z index: 2
+		alignment: right middle
+		font:
+			name: MatrixBoldSmallCaps
+			italic name: Matrix-Bold
+			size: 14
+			color: rgb(0,0,0)
+		visible: script: if is_nmonster() then false else if styling.其他标注=="no" then false else true
+#####片假名注音
+	name zhuyin:
+		left: 36
+		top : 31
+		width: 303
+		height: 9
+		z index: 2
+		alignment: middle shrink-overflow
+		font:
+			name: DFHSGothic
+			size: 6
+			color: 
+				script: if styling.卡名颜色=="银色" then rgb(230,230,230)
+				else if styling.卡名颜色=="金色" then rgb(216,199,53)
+				else if styling.卡名颜色=="白色" then rgb(255,255,255)
+				else if styling.卡名颜色=="黑色" then rgb(0,0,0)
+				else if styling.卡名颜色=="红色" then rgb(60,0,0)
+				else if card.card_type=="黑暗同调怪兽" then rgb(255,255,255)
+				else if card.card_type=="超量怪兽" then rgb(255,255,255)
+				else if is_nmonster() then rgb(255,255,255)
+				else rgb(0,0,0)
+		visible: script: if styling.卡片语言=="日文" then true else false
+	type zhuyin:
+		left: 24
+		top : 460
+		width: 245
+		height: 6
+		alignment: middle left
+		z index: 2
+		font:
+			name: DFHSGothic
+			italic name: Matrix
+			size: 3
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-text-replacements
+			alignment: middle center
+			size: 3
+		visible: script: if is_nmonster() then false else if styling.卡片语言=="日文" then true else false
+	rule zhuyin:
+		left: 23
+		top :
+			script: if is_nmonster() then 460 else 478
+		width: 360
+		height:
+			script: if is_nmonster() then 114 else 76
+		font:
+			name: DFHSGothic
+			size: { if styling.效果字体大小=="6" then "3.2" else if styling.效果字体大小=="6.5" then "3.4" else if styling.效果字体大小=="7" then "3.6" else if styling.效果字体大小=="8" then "4" else if styling.效果字体大小=="7.5" then "3.8" else if styling.效果字体大小=="8.5" then "4.2" else "3"}
+			scale down to: 0
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-text-replacements
+			alignment: middle center
+			size: 3.5
+		alignment: { if styling.效果字体调整=="justified" then "top left justify" else "top left" }
+		z index: 2
+		padding left: 1
+		padding top: 1
+		padding right: 0
+		padding bottom: 0
+		line height hard: 1.0
+		line height line: 1.0
+		line height soft: 0.9
+		line height hard max: 1.1
+		line height line max: 1.1
+		visible: script: if styling.卡片语言=="日文" then true else false

@@ -1,0 +1,19 @@
+﻿mse version: 2.0.0
+full name: 游戏王
+short name: Yu-Gi-Oh!
+installer group: Yugioh/game files
+icon: card-back.png
+position hint: 1
+version: 2013-02-09
+
+############################################################## The script
+init script: include file: script
+
+############################################################## Lots of lists
+include file: card_fields
+include file: set_fields
+include file: packs
+include file: word_lists
+include file: auto_replace
+
+############################################################## Other stuff

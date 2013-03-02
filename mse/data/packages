@@ -1,0 +1,156 @@
+﻿mse version: 2.0.0
+package:
+	name: cns.mse-locale
+	version: 2013-01-22
+	status: 34
+	file: A20120624T200001 cns.png
+	file: A20130216T195903 locale
+package:
+	name: en.mse-locale
+	version: 2011-01-22
+	status: 34
+	file: A20130216T093234 locale
+	file: A20071228T201340 usgb.png
+package:
+	name: yugioh-OCG.mse-style
+	version: 2013-02-08
+	status: 34
+	file: A20121101T090334 card-dragons.png
+	file: A20130214T162654 card-dsynchro.png
+	file: A20121101T083013 card-effect.png
+	file: A20121101T090433 card-fusion.png
+	file: A20121104T181931 card-normal.png
+	file: A20121101T090506 card-obelisk.png
+	file: A20121101T090815 card-ra.png
+	file: A20121101T083136 card-ritual.png
+	file: A20121101T120202 card-sample.png
+	file: A20121101T090649 card-slifer.png
+	file: A20130214T161623 card-spell.png
+	file: A20121101T082840 card-synchro.png
+	file: A20130214T161536 card-token.png
+	file: A20121101T100711 card-trap.png
+	file: A20121101T073307 card-xyz.png
+	file: A20130217T101443 style
+package:
+	name: yugioh-TCG.mse-style
+	version: 2013-02-08
+	status: 34
+	file: A20121030T190106 card-dragons.jpg
+	file: A20121030T185751 card-dsynchro.jpg
+	file: A20121030T194714 card-effect.jpg
+	file: A20121030T194455 card-fusion.jpg
+	file: A20121030T194622 card-normal.jpg
+	file: A20121030T185247 card-obelisk.jpg
+	file: A20121030T184453 card-ra.jpg
+	file: A20121101T105142 card-ritual.jpg
+	file: A20121101T120044 card-sample.png
+	file: A20121030T183711 card-slifer.jpg
+	file: A20121030T183236 card-spell.jpg
+	file: A20121030T182823 card-synchro.jpg
+	file: A20121031T110916 card-token.jpg
+	file: A20121031T111729 card-token2.jpg
+	file: A20121030T194406 card-trap.jpg
+	file: A20121030T214340 card-xyz.jpg
+	file: A20130217T101412 style
+package:
+	name: yugioh-caicai-levels.mse-symbol-font
+	version: 2013-02-08
+	status: 34
+	file: A20080809T002702 bar.png
+	file: A20121021T204759 blank.png
+	file: A20121102T074509 cstar.png
+	file: A20130213T130054 dark.png
+	file: A20130213T202151 divine.png
+	file: A20081211T160418 dstar.png
+	file: A20130213T130022 earth.png
+	file: A20130213T130346 fire.png
+	file: A20080811T171334 goldfoil.png
+	file: A20070908T163310 leftbracket.png
+	file: A20130213T201930 light.png
+	file: A20070908T163310 parallelfoil.png
+	file: A20070908T163310 rightbracket.png
+	file: A20080811T171334 secretfoil.png
+	file: A20130213T125821 spell.png
+	file: A20121015T194709 star.png
+	file: A20060804T205838 star2.png
+	file: A20070908T163310 superfoil.png
+	file: A20130217T101125 symbol-font
+	file: A20130213T125653 trap.png
+	file: A20130213T130200 water.png
+	file: A20130213T202346 wind.png
+	file: A20130213T130148 wind2.png
+	file: A20080811T171334 wu.png
+	file: A20121028T120538 zstar.png
+	file: A20090805T105108 亮防伪.png
+	file: A20130215T162313 仪式.png
+	file: A20130212T211055 仪式魔法.png
+	file: A20130210T230522 光.png
+	file: A20130215T163105 卡名.png
+	file: A20130215T162330 反击.png
+	file: A20130212T211131 反击陷阱.png
+	file: A20130213T122941 右括号.png
+	file: A20090114T101250 地.png
+	file: A20130215T162339 场地.png
+	file: A20130212T211141 场地魔法.png
+	file: A20130212T204327 左括号.png
+	file: A20130215T163037 文字.png
+	file: A20090114T101114 暗.png
+	file: A20090805T105132 暗防伪.png
+	file: A20130210T230505 水.png
+	file: A20130215T162304 永续.png
+	file: A20130212T211027 永续陷阱.png
+	file: A20130212T211041 永续魔法.png
+	file: A20090114T102012 炎.png
+	file: A20130210T230514 神.png
+	file: A20130215T162255 装备.png
+	file: A20130212T211015 装备魔法.png
+	file: A20130212T204422 通常陷阱.png
+	file: A20130212T204405 通常魔法.png
+	file: A20130215T162322 速攻.png
+	file: A20130212T211117 速攻魔法.png
+	file: A20130210T230554 陷.png
+	file: A20090114T101430 风.png
+	file: A20130210T230616 魔.png
+package:
+	name: yugioh-standard.mse-style
+	version: 2013-02-08
+	status: 34
+	file: A20130214T165334 card-dragons.png
+	file: A20130214T164518 card-dsynchro.png
+	file: A20130214T164430 card-effect.png
+	file: A20130214T164343 card-fusion.png
+	file: A20130214T164309 card-normal.png
+	file: A20130214T164226 card-obelisk.png
+	file: A20130214T164145 card-ra.png
+	file: A20130214T164039 card-ritual.png
+	file: A20061225T151730 card-sample.png
+	file: A20130214T164002 card-slifer.png
+	file: A20130214T163917 card-spell.png
+	file: A20130214T163836 card-synchro.png
+	file: A20130214T163333 card-token.png
+	file: A20130214T163217 card-trap.png
+	file: A20130217T085926 card-xyz.png
+	file: A20130217T101320 style
+package:
+	name: yugioh-text-replacements.mse-symbol-font
+	version: 2008-08-10
+	status: 34
+	file: A20080811T171334 blank.png
+	file: A20070908T163310 dot.png
+	file: A20070908T163310 infinity.png
+	file: A20070908T163310 leftbracket.png
+	file: A20080811T171334 qmark.png
+	file: A20070908T163310 rightbracket.png
+	file: A20130217T101144 symbol-font
+package:
+	name: yugioh.mse-game
+	version: 2013-02-09
+	status: 34
+	file: A20130217T100614 auto_replace
+	file: A20121021T153607 card-back.png
+	file: A20130217T101108 card_fields
+	file: A20130217T100601 game
+	file: A20121031T064950 packs
+	file: A20130216T194553 script
+	file: A20130217T100803 set_fields
+	file: A20130217T100819 word_lists

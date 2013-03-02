@@ -1,0 +1,83 @@
+﻿
+############################################################## Card pack items
+# 卡包信息设置
+pack type:
+	name: rare
+	filter: card.rarity != "无防伪"
+pack type:
+	name: common
+	filter: card.rarity == "无防伪"
+pack type:
+	name: gold
+	filter: card.rarity == "黄金闪图"
+pack type:
+	name: card
+	filter: card.number != ""
+############################################################## Card packs
+##卡包罕见度配置
+pack type:
+	name: 补充包
+	item:
+		name: rare
+		amount: 1
+	item:
+		name: common
+		amount: 8
+pack type:
+	name: 冠军包
+	item:
+		name: rare
+		amount: 1
+	item:
+		name: common
+		amount: 2
+pack type:
+	name: 决斗者包
+	item:
+		name: rare
+		amount: 1
+	item:
+		name: common
+		amount: 5
+pack type:
+	name: 黄金系列
+	item:
+		name: gold
+		amount: 3
+	item:
+		name: common
+		amount: 22
+pack type:
+	name: 电影包
+	item:
+		name: rare
+		amount: 3
+	item:
+		name: common
+		amount: 5
+pack type:
+	name: 额外包
+	item:
+		name: rare
+		amount: 5
+pack type:
+	name: 比赛包
+	item:
+		name: card
+		amount: 3
+pack type:
+	name: 自定义包含稀罕度的卡数量
+	item:
+		name: rare
+pack type:
+	name: 自定义普通卡数量
+	item:
+		name: common
+pack type:
+	name: 自定义金卡数量
+	item:
+		name: gold
+pack type:
+	name: 自定义卡片数量
+	item:
+		name: card

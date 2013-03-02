@@ -1,0 +1,146 @@
+@charset "utf-8";
+body {
+    margin: 0;
+}
+
+.card {
+    position: relative;
+}
+
+.card_type {
+    position: absolute;
+    width: 421px;
+    height: 614px;
+}
+
+.name {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    width: 296px;
+    height: 35px;
+    font-family: "YGO菜菜";
+    font-size: 25px;
+    color: black;
+}
+
+.attribute {
+    position: absolute;
+    left: 341px;
+    top: 37px;
+    width: 40px;
+    height: 40px;
+}
+
+.level {
+    position: absolute;
+    left: 24.5px;
+    top: 87.5px;
+    height: 33px;
+    width: 341.5px;
+    text-align: right;
+    padding-top: 6px;
+}
+
+.level img {
+    width: 20px;
+    height: 20px;
+}
+
+.image {
+    position: absolute;
+    left: 59.5px;
+    top: 132px;
+    width: 303px;
+    height: 306px;
+}
+
+.monster_type {
+    position: absolute;
+    left: 49px;
+    top: 472px;
+    height: 15px;
+    font-family: "YGO菜菜";
+    tab-size: 10.6px;
+}
+
+.number {
+    position: absolute;
+    left: 237px;
+    top: 445px;
+    width: 134px;
+    height: 17.5px;
+    font-family: "Palatino Linotype";
+    size: 9.5px;
+    text-align: right;
+}
+
+.edition {
+    position: absolute;
+    left: 50px;
+    top: 445px;
+    width: 134px;
+    height: 17.5px;
+    font-family: "BankGothic Md BT";
+    font-size: 12px;
+}
+
+.rule_text {
+    position: absolute;
+    left: 41px;
+    top: 488px;
+    width: 340.5px;
+    height: 69px;
+    font-family: "YGO菜菜";
+    font-size: 7px;
+}
+
+.gamecode {
+    position: absolute;
+    left: 21px;
+    top: 580px;
+    width: 112px;
+    height: 21px;
+    font-family: "Palatino Linotype";
+    font-size: 8px;
+}
+
+.rarity2 {
+    position: absolute;
+    left: 387px;
+    top: 578px;
+    height: 21px;
+    width: 21px;
+}
+
+.copyright {
+    position: absolute;
+    left: 204px;
+    top: 579px;
+    width: 169px;
+    height: 22px;
+    font-family: "DFHSGothic";
+    font-size: 8px;
+}
+
+.atkoverlay {
+    position: absolute;
+    left: 187px;
+    top: 558px;
+    width: 70px;
+    height: 21px;
+    text-align: right;
+    font-family: "MatrixBoldSmallCaps";
+    font-size: 13.5px;
+}
+
+.defoverlay {
+    position: absolute;
+    left: 272px;
+    top: 558px;
+    width: 70px;
+    height: 21px;
+    text-align: right;
+    font-family: "MatrixBoldSmallCaps";
+    font-size: 13.5px;
+}

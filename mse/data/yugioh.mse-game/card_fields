@@ -1,0 +1,375 @@
+﻿
+############################################################## Card fields
+############################# Background stuff
+### 怪兽选择和图片
+card field:
+	type: choice
+	name: card type
+	choice: 效果怪兽
+	choice: 同调怪兽
+	choice: 超量怪兽
+	choice: 魔法
+	choice: 陷阱
+	choice: 通常怪兽
+	choice: 融合怪兽
+	choice: 仪式怪兽
+	choice: 黑暗同调怪兽
+	choice: 衍生物
+	choice: 巨神兵
+	choice: 天空龙
+	choice: 翼神龙
+	choice: 传说之龙
+	default: card_type()
+	description: 点击空白，选择卡片类型
+	card list name: 卡片类型
+	choice colors cardlist:
+		通常怪兽:	   rgb(120,18,0)
+		效果怪兽:	   rgb(120,18,0)
+		仪式怪兽:	   rgb(26,26,26)
+		同调怪兽:   rgb(26,26,26)
+		黑暗同调怪兽:   rgb(26,26,26)
+		融合怪兽:	   rgb(26,26,26)
+		衍生物:	   rgb(120,18,0)
+		巨神兵:	   rgb(26,26,26)
+		天空龙:		   rgb(26,26,26)
+		翼神龙:		   rgb(26,26,26)
+		传说之龙: rgb(26,26,26)
+		魔法:	   rgb(80,80,80)
+		陷阱:	   rgb(30,110,0)
+		超量怪兽:   rgb(26,26,26) 
+## 罕见度可选择列表
+card field:
+	type: choice
+	name: foils
+	editable: false
+	choice: none
+	choice: holo image
+	choice: secret holo image
+	choice: parallel holo image
+	choice: gold tech holo image
+	default: foil()
+	card list name: 罕见度
+	description: 罕见度设置
+card field:
+	type: choice
+	name: image2
+	choice: 透明卡名
+	editable: false
+	description: 透明卡名框
+card field:
+	type: choice
+	name: image3
+	choice: 透明文字
+	editable: false
+	description: 透明效果文字框
+############################# Name line
+####卡片界面元素说明
+##名字（日文的会多一个片假名）
+card field:
+	type: text
+	name: name
+	identifying: true
+	show statistics: false
+	card list visible: true
+	card list column: 1
+	card list width: 150
+	card list name: 卡名
+	description: 输入卡片名字 (日文,繁体需要输入繁体中文。)
+##attribute
+card field:
+	type: choice
+	name: attribute
+	choice: none
+	choice: 地
+	choice: 水
+	choice: 炎
+	choice: 风
+	choice: 光
+	choice: 暗
+	choice: 神
+	choice: 魔法
+	choice: 陷阱
+	choice:	earth
+	choice:	water
+	choice: fire
+	choice: wind
+	choice:	light
+	choice:	dark
+	choice: divine
+	choice:	spell
+	choice:	trap
+	default: attribute()
+	card list name: 属性
+	card list visible: true
+	card list column: 2
+	description: 选择属性
+
+##等级
+card field:
+	type: text
+	name: level
+	description:  星星 直接输入 * ，其他请点击 字体符号 的 插入符号
+	script: level_filter(value)
+	card list name: 等级
+############################# Image
+##卡图
+card field:
+	type: image
+	name: image
+	show statistics: false
+	card list name: 卡图
+	description: 双击选择图片
+############################# Card type
+##怪兽种族，效果1（日文的会多一个片假名）
+# Keep type1, type2, and separator fields for backwards compatibility until two or three versions after 0.3.8.
+card field:
+	type: text
+	name: type1
+	script: type_list(value)
+	default: "  "
+	editable: false
+	show statistics: false
+	card list name: 默认效果1
+	description: 点击选择
+card field:
+	type: text
+	name: type2
+	script: class_list(value)
+	editable: false
+	show statistics: false
+	card list name: 默认效果2
+	description: 点击选择
+card field:
+	type: text
+	name: separator
+	script: " / "
+	editable: false
+	save value: false
+	show statistics: false
+	card list name: 默认分割线
+# These are the new type fields.
+##怪兽种族，效果2（日文的会多一个片假名）
+card field:
+	type: text
+	name: type 1
+	script: type_list(value)
+	default: card.type1 # Remove when card.type1 is removed.
+	card list name: 种族
+	description: 点击选择
+card field:
+	type: text
+	name: type 2
+	script: class_list(value)
+	default: split_text(match:" / ", card.type2).0 # Remove when card.type2 is removed.
+	card list name: 效果1
+	description: 点击选择
+card field:
+	type: text
+	name: type 3
+	script: c_list(value)
+	default: if contains(card.type2, match:" / ") then split_text(match:" / ", card.type2).1 else "" # Remove when card.type2 is removed.
+	card list name: 效果2
+	description: 点击选择
+card field:
+	type: text
+	name: monster type
+	script:typecombined(value)
+	card list visible: true
+	card list column: 3
+	show statistics: false
+	card list width: 200
+	card list name:  种族
+	description: 点击选择
+############################# Edition and Card ID
+##卡包
+card field:
+	type: text
+	name: number
+	card list visible: true
+	card list column: 6
+	card list width: 100
+	card list name: 卡包
+	show statistics: false
+	description: 输入卡包-卡号  JP02-XM001
+##卡包额外信息
+card field:
+	type: text
+	name: edition
+	default: set.卡包说明
+	show statistics: false
+	card list name: 卡包说明
+	description: 输入卡片版本的一项。 DUEL=DUEL TERMINAL 
+############################# Text box
+##效果（日文的会多一个片假名）
+card field:
+	type: text
+	name: rules
+	script: text_filter(value)
+	editable: false
+	show statistics: false
+	card list name: 效果脚本
+	description: 卡片效果,在 字体符号 的 插入符号 选择特殊符号
+card field:
+	type: text
+	name: rule text
+	multi line: true
+	save value: true
+	show statistics: false
+	script:
+		if nm_ext_querry(value) then flavor_text_filter(value)
+		else text_filter(value)
+	default: card.rules
+	card list name: 效果说明
+	card list width: 150
+	description: 卡片效果,在 字体符号 的 插入符号 选择特殊符号
+############################# Attack/Defense
+##攻击防御
+card field:
+	type: text
+	name: attack
+	save value: true
+	script: a_and_d_filter(value)
+	card list visible: true
+	card list column: 5
+	card list width: 50
+	card list name: ATK
+	description: 点击输入攻击力
+card field:
+	type: text
+	name: defense
+	save value: true
+	script: a_and_d_filter(value)
+	card list visible: true
+	card list column: 6
+	card list width: 50
+	card list name: DEF
+	description: 点击输入防御力
+
+############################# Copyright stuff
+##卡密码
+card field:
+	type: text
+	name: gamecode
+	show statistics: false
+	card list name: 密码
+	description: 卡片唯一的密码,8位数字
+###罕见度
+card field:
+	type: choice
+	name: rarity2
+	show statistics: true
+	choice: 无防伪
+	choice: 暗防伪
+	choice: 亮防伪
+	choice: 金防伪
+	card list visible: true
+	card list column: 7
+	card list name: 防伪
+	description: 选择防伪标记
+card field:
+	type: choice
+	name: rarity
+	show statistics: true
+	choice: common
+	choice: rare
+	choice: super rare
+	choice: ultra rare
+	choice: secret rare
+	choice: ultimate rare
+	choice: parallel rare
+	choice: gold tech
+	choice: promo
+	card list column: 8
+card field:
+	type: choice
+	name: corner foil
+	choice: stamp
+	editable: false
+	card list name: 罕见度3
+##版权
+card field:
+	type: text
+	name: copyright
+	default: set.版权
+	show statistics: false
+	card list name: 版权
+	description: 卡片版权声明 (c)
+##卡名的注音
+card field:
+	type: text
+	name: name zhuyin
+	identifying: true
+	save value: true
+	show statistics: false
+	card list visible: false
+	description: 片假名注音
+	card list name: 片假名1
+###editable: script: if styling.卡片语言=="日文" then true else false###效果的注音
+card field:
+	type: text
+	name: rule zhuyin
+	multi line: true
+	save value: true
+	show statistics: false
+	card list visible: false
+	script:
+		if nm_ext_querry(value) then flavor_text_filter(value)
+		else text_filter(value)
+	default: card.rules
+	description: 片假名注音
+	card list name: 片假名2
+###种族/效果 注音
+card field:
+	type: text
+	name: type zhuyin
+	multi line: true
+	save value: true
+	show statistics: false
+	card list visible: false
+	script:
+		if nm_ext_querry(value) then flavor_text_filter(value)
+		else text_filter(value)
+	default: card.rules
+	description: 片假名注音
+	card list name: 片假名3
+###其他设置
+card field:
+	type: choice
+	name: bar
+	choice: bar
+	editable: false
+	description: 黑线
+	card list visible: false
+
+card field:
+	type: choice
+	name: leftbracket
+	choice: lbracket
+	choice: 1bracket2
+	default: zkuohao()
+	editable: false
+	description: 左括号
+	card list visible: false
+card field:
+	type: choice
+	name: rightbracket
+	choice: rbracket
+	choice: rbracket2
+	default: ykuohao()
+	editable: false
+	card list visible: false
+	description: 右括号
+card field:
+	type: text
+	name: atkoverlay
+	default: "ATK/"
+	editable: false
+	description: ATK标注
+	card list visible: false
+card field:
+	type: text
+	name: defoverlay
+	default: "DEF/"
+	editable: false
+	description: DEF标注
+	card list visible: false
