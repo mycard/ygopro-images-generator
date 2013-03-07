@@ -65,12 +65,21 @@
     right: 20px;
     top: 90px;
     height: 20px;
-    width: -webkit-calc(20px*4);
-    text-align: right;
-    font-size:0;
     background: url(mse/data/yugioh-caicai-levels.mse-symbol-font/star.png) repeat-x;
     background-size: 20px 20px;
 }
+.level[data-level="1"]{width: 20px}
+.level[data-level="2"]{width: 40px}
+.level[data-level="3"]{width: 60px}
+.level[data-level="4"]{width: 80px}
+.level[data-level="5"]{width: 100px}
+.level[data-level="6"]{width: 120px}
+.level[data-level="7"]{width: 140px}
+.level[data-level="8"]{width: 160px}
+.level[data-level="9"]{width: 180px}
+.level[data-level="10"]{width: 200px}
+.level[data-level="11"]{width: 220px}
+.level[data-level="12"]{width: 240px}
 
 .image {
     position: absolute;
