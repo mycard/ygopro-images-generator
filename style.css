@@ -1,16 +1,43 @@
 @charset "utf-8";
-body {
-    margin: 0;
+@font-face
+{
+    font-family: "YGO菜菜";
+    src: url('mse/fonts/YGO菜菜.TTF');
 }
+
+@font-face
+{
+    font-family: "Palatino Linotype";
+    src: url('mse/fonts/PalatinoLinoType.ttf');
+}
+@font-face
+{
+    font-family: "BankGothic Md BT";
+    src: url('mse/fonts/BankGothicMediumBT.ttf');
+}
+
+@font-face
+{
+    font-family: "DFHSGothic";
+    src: url('mse/fonts/注音字体.ttf');
+}
+@font-face
+{
+    font-family: "MatrixBoldSmallCaps";
+    src: url('mse/fonts/MatrixBoldSmallCaps.ttf');
+}
+
 
 .card {
     position: relative;
+    width: 421px;
+    height: 614px;
 }
 
 .card_type {
     position: absolute;
-    width: 421px;
-    height: 614px;
+    width: 100%;
+    height: 100%;
 }
 
 .name {
@@ -34,17 +61,15 @@ body {
 
 .level {
     position: absolute;
-    left: 24.5px;
-    top: 87.5px;
-    height: 33px;
-    width: 341.5px;
-    text-align: right;
-    padding-top: 6px;
-}
-
-.level img {
-    width: 20px;
+    /*left: 30.5px;*/
+    right: 20px;
+    top: 90px;
     height: 20px;
+    width: -webkit-calc(20px*4);
+    text-align: right;
+    font-size:0;
+    background: url(mse/data/yugioh-caicai-levels.mse-symbol-font/star.png) repeat-x;
+    background-size: 20px 20px;
 }
 
 .image {
@@ -122,8 +147,12 @@ body {
     font-family: "DFHSGothic";
     font-size: 8px;
 }
-
-.atkoverlay {
+.atk_title {
+    position: absolute;
+    left: 180px;
+    top: 558px;
+}
+.atk {
     position: absolute;
     left: 187px;
     top: 558px;
@@ -134,7 +163,13 @@ body {
     font-size: 13.5px;
 }
 
-.defoverlay {
+.def_title {
+    position: absolute;
+    left: 280px;
+    top: 558px;
+}
+
+.def {
     position: absolute;
     left: 272px;
     top: 558px;
