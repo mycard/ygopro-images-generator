@@ -13,8 +13,13 @@
     }, {
       placeholder: "",
       data: JSON.stringify({
+        'dark': '暗',
+        'divine': '神',
+        'earth': '地',
+        'fire': '炎',
+        'light': '光',
         'water': '水',
-        'fire': '炎'
+        'wind': '风'
       }),
       type: 'select',
       submit: 'OK'
