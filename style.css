@@ -28,7 +28,7 @@
 }
 
 
-.card {
+body {
     position: relative;
     width: 421px;
     height: 614px;
@@ -57,7 +57,10 @@
     top: 37px;
     width: 40px;
     height: 40px;
+    background-size: 40px 40px;
 }
+.attribute[data-attribute="water"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/水.png)}
+.attribute[data-attribute="fire"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/炎.png)}
 
 .level {
     position: absolute;
