@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url("normalize.css");
 @font-face
 {
     font-family: "YGO菜菜";
@@ -28,16 +29,12 @@
 }
 
 
-body {
+.card {
     position: relative;
     width: 421px;
     height: 614px;
-}
-
-.card_type {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    background: url(mse/data/yugioh-standard.mse-style/card-slifer.png);
+    background-size: 421px 614px;
 }
 
 .name {
@@ -148,6 +145,7 @@ body {
     top: 578px;
     height: 21px;
     width: 21px;
+    background: url(mse/data/yugioh-caicai-levels.mse-symbol-font/暗防伪.png);
 }
 
 .copyright {

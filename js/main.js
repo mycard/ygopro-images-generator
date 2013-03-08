@@ -2,6 +2,9 @@
 (function() {
 
   $(document).ready(function() {
+    $('#card_form').submit(function() {
+      return this.document.value = $('.card')[0].outerHTML;
+    });
     $('.name').editable(function(value, settings) {
       return value;
     });

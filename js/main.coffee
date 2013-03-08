@@ -1,4 +1,7 @@
 $(document).ready ->
+  $('#card_form').submit ->
+    @document.value = $('.card')[0].outerHTML
+
   $('.name').editable (value, settings) ->
     value
 
