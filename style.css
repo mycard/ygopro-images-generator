@@ -58,6 +58,11 @@
 }
 .attribute[data-attribute="water"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/水.png)}
 .attribute[data-attribute="fire"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/炎.png)}
+.attribute[data-attribute="dark"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/暗.png)}
+.attribute[data-attribute="light"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/光.png)}
+.attribute[data-attribute="earth"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/地.png)}
+.attribute[data-attribute="wind"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/风.png)}
+.attribute[data-attribute="divine"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/神.png)}
 
 .level {
     position: absolute;

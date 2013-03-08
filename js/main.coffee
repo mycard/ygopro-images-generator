@@ -9,7 +9,7 @@ $(document).ready ->
     $(this).attr 'data-attribute', value
   , {
     placeholder: ""
-    data: JSON.stringify {'water': '水', 'fire': '炎'}
+    data: JSON.stringify {'dark': '暗', 'divine': '神', 'earth': '地', 'fire': '炎', 'light': '光', 'water': '水', 'wind': '风'}
     type: 'select'
     submit: 'OK'
     }
@@ -26,7 +26,7 @@ $(document).ready ->
   , {
     type: 'textarea',
     submit: 'OK'
-  }
+    }
   $('.name').editable (value, settings) ->
     value
   $('.gamecode').editable (value, settings) ->
