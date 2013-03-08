@@ -5,9 +5,8 @@
     $('.name').editable(function(value, settings) {
       return value;
     });
-    return $('.attribute').editable(function(value, settings) {
-      $(this).attr('data-attribute', value);
-      return "";
+    $('.attribute').editable(function(value, settings) {
+      return $(this).attr('data-attribute', value);
     }, {
       placeholder: "",
       data: JSON.stringify({
@@ -16,6 +15,33 @@
       }),
       type: 'select',
       submit: 'OK'
+    });
+    $('.monster_type').editable(function(value, settings) {
+      return value;
+    });
+    $('.number').editable(function(value, settings) {
+      return value;
+    });
+    $('.edition').editable(function(value, settings) {
+      return value;
+    });
+    $('.rule_text').editable(function(value, settings) {
+      return value;
+    }, {
+      type: 'textarea',
+      submit: 'OK'
+    });
+    $('.name').editable(function(value, settings) {
+      return value;
+    });
+    $('.gamecode').editable(function(value, settings) {
+      return value;
+    });
+    $('.atk').editable(function(value, settings) {
+      return value;
+    });
+    return $('.def').editable(function(value, settings) {
+      return value;
     });
   });
 
