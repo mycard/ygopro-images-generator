@@ -44,7 +44,7 @@
     width: 296px;
     height: 35px;
     font-family: "YGO菜菜";
-    font-size: 25px;
+    font-size: 36px;
     color: black;
 }
 
@@ -67,16 +67,16 @@
 .level {
     position: absolute;
     /*left: 30.5px;*/
-    right: 20px;
-    top: 90px;
-    height: 20px;
+    right: 48px;
+    top: 92px;
+    height: 25px;
     background: url(mse/data/yugioh-caicai-levels.mse-symbol-font/star.png) repeat-x;
-    background-size: 20px 20px;
+    background-size: 25px 25px;
 }
-.level[data-level="1"]{width: 20px}
-.level[data-level="2"]{width: 40px}
-.level[data-level="3"]{width: 60px}
-.level[data-level="4"]{width: 80px}
+.level[data-level="1"]{width: 40px}
+.level[data-level="2"]{width: 60px}
+.level[data-level="3"]{width: 80px}
+.level[data-level="4"]{width: 100px}
 .level[data-level="5"]{width: 100px}
 .level[data-level="6"]{width: 120px}
 .level[data-level="7"]{width: 140px}
@@ -90,13 +90,13 @@
     position: absolute;
     left: 59.5px;
     top: 132px;
-    width: 303px;
+    width: 302px;
     height: 306px;
 }
 
 .monster_type {
     position: absolute;
-    left: 49px;
+    left: 34px;
     top: 472px;
     height: 15px;
     font-family: "YGO菜菜";
@@ -106,46 +106,46 @@
 .number {
     position: absolute;
     left: 237px;
-    top: 445px;
+    top: 442px;
     width: 134px;
-    height: 17.5px;
+    height: 18px;
     font-family: "Palatino Linotype";
-    size: 9.5px;
+    size: 2px;
     text-align: right;
 }
 
 .edition {
     position: absolute;
     left: 50px;
-    top: 445px;
-    width: 134px;
-    height: 17.5px;
+    top: 446px;
+    width: 200px;
+    height: 24px;
     font-family: "BankGothic Md BT";
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .rule_text {
     position: absolute;
-    left: 41px;
+    left: 44px;
     top: 488px;
-    width: 340.5px;
+    width: 338px;
     height: 69px;
     font-family: "YGO菜菜";
-    font-size: 7px;
+    font-size: 6px;
 }
 
 .gamecode {
     position: absolute;
     left: 21px;
-    top: 580px;
+    top: 581px;
     width: 112px;
-    height: 21px;
+    height: 20px;
     font-family: "Palatino Linotype";
-    font-size: 8px;
+    font-size: 5px;
 }
 
 .rarity2 {
-    position: absolute;
+    position: relative;
     left: 387px;
     top: 578px;
     height: 21px;
@@ -153,54 +153,53 @@
     background: url(mse/data/yugioh-caicai-levels.mse-symbol-font/暗防伪.png);
 }
 
-.hr {
-    position: absolute;
-    left: 10px;
-    top: 500px;
-    width: 100px;
-    height: 1px;
-    border: none;
-    background-color: #000000;
-}
-
 .copyright {
     position: absolute;
     left: 204px;
-    top: 579px;
-    width: 169px;
+    top: 584px;
+    width: 269px;
     height: 22px;
     font-family: "DFHSGothic";
     font-size: 8px;
 }
+.hr {    
+position: absolute;   
+ left: 48px;    
+ top: 550px;  
+ width: 326px; 
+ height: 1px;   
+ border: none;   
+ background-color: #000000;
+ }
 .atk_title {
     position: absolute;
-    left: 180px;
+    left: 220px;
     top: 558px;
 }
 .atk {
     position: absolute;
-    left: 187px;
-    top: 558px;
+    left: 222px;
+    top: 560px;
     width: 70px;
     height: 21px;
     text-align: right;
     font-family: "MatrixBoldSmallCaps";
-    font-size: 13.5px;
+    font-size: 16px;
 }
 
 .def_title {
     position: absolute;
-    left: 280px;
+    left: 304px;
     top: 558px;
 }
 
 .def {
     position: absolute;
-    left: 272px;
-    top: 558px;
+    left: 306px;
+    top: 560px;
     width: 70px;
     height: 21px;
     text-align: right;
     font-family: "MatrixBoldSmallCaps";
-    font-size: 13.5px;
+    font-size: 16px;
 }
