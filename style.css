@@ -153,6 +153,16 @@
     background: url(mse/data/yugioh-caicai-levels.mse-symbol-font/暗防伪.png);
 }
 
+.hr {
+    position: absolute;
+    left: 10px;
+    top: 500px;
+    width: 100px;
+    height: 1px;
+    border: none;
+    background-color: #000000;
+}
+
 .copyright {
     position: absolute;
     left: 204px;
