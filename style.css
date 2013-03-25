@@ -33,9 +33,14 @@
     position: relative;
     width: 421px;
     height: 614px;
-    background: url(mse/data/yugioh-standard.mse-style/card-slifer.png);
     background-size: 421px 614px;
 }
+.card.monster.normal{background-image: url(mse/data/yugioh-standard.mse-style/card-normal.png)}
+.card.monster.effect{background-image: url(mse/data/yugioh-standard.mse-style/card-effect.png)}
+.card.monster.fusion{background-image: url(mse/data/yugioh-standard.mse-style/card-fusion.png)}
+.card.monster.ritual{background-image: url(mse/data/yugioh-standard.mse-style/card-ritual.png)}
+.card.monster.synchro{background-image: url(mse/data/yugioh-standard.mse-style/card-synchro.png)}
+.card.monster.xyz{background-image: url(mse/data/yugioh-standard.mse-style/card-xyz.png)}
 
 .name {
     position: absolute;
