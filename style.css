@@ -92,24 +92,48 @@
 .level[data-level="11"]{width: 275px}
 .level[data-level="12"]{width: 300px}
 
-.level.editable:hover::before,
-.level.editable:hover::after {
-  position: relative;
+.level.editable::before,
+.level.editable::after {
   width: 25px;
   height: 100%;
-  left: -25px;
   display: inline-block;
   font-size: 25px;
   line-height: 25px;
   text-align: center;
   background: rgba(200, 200, 200, 0.3);
-  content: "+";
+  opacity: 0;
 }
 
-.level.editable:hover::after {
+.level.editable::before {
+  position: absolute;
+  display: block;
+  content: "+";
+  width: 25px;
+  height: inherit;
+  right: 0%;
+  left: auto;
+  padding-right: 325px;
+  background-clip: content-box;
+}
+
+.level.editable::after {
+  position: relative;
   content: "-";
+  width: 25px;
   left: 100%;
-  margin-left: -25px;
+}
+
+.level.editable:hover::before,
+.level.editable:hover::after {
+  opacity: 1;
+}
+
+.level.editable[data-level="12"]::before {
+  opacity: 0;
+}
+
+.level.editable[data-level="1"]::after {
+  opacity: 0;
 }
 
 [contenteditable]:active,
