@@ -60,6 +60,7 @@
     width: 40px;
     height: 40px;
     background-size: 40px 40px;
+    background-repeat: no-repeat;
 }
 .attribute[data-attribute="water"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/水.png)}
 .attribute[data-attribute="fire"]{background-image: url(mse/data/yugioh-caicai-levels.mse-symbol-font/炎.png)}
@@ -137,9 +138,41 @@
 }
 
 [contenteditable]:active,
-[contenteditable]:hover,
-.attribute.editable:hover {
-  background-color: rgba(255,255,255,0.3);
+[contenteditable]:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.attribute.editable:hover::before {
+  position: relative;
+  display: block;
+  width: inherit;
+  height: 40px;
+  top: 100%;
+  margin-top: -40px;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 101;
+  content: " ";
+}
+
+.attribute.editable:hover::after {
+  position: relative;
+  margin-top: 40px;
+  height: 280px;
+  width: inherit;
+  display: block;
+  content: " ";
+  z-index: 100;
+  background:
+    url(mse/data/yugioh-caicai-levels.mse-symbol-font/%E6%9A%97.png) 0 0,
+    url(mse/data/yugioh-caicai-levels.mse-symbol-font/%E7%A5%9E.png) 0 40px,
+    url(mse/data/yugioh-caicai-levels.mse-symbol-font/%E5%9C%B0.png) 0 80px,
+    url(mse/data/yugioh-caicai-levels.mse-symbol-font/%E7%82%8E.png) 0 120px,
+    url(mse/data/yugioh-caicai-levels.mse-symbol-font/%E5%85%89.png) 0 160px,
+    url(mse/data/yugioh-caicai-levels.mse-symbol-font/%E6%B0%B4.png) 0 200px,
+    url(mse/data/yugioh-caicai-levels.mse-symbol-font/%E9%A3%8E.png) 0 240px;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
 }
 
 .image {

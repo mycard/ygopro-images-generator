@@ -29,11 +29,25 @@ $(document).ready ->
 
       $('.editable').each (_, element) ->
         if element.classList.contains('attribute')
-          $(element).click (e) ->
+          height = element.getClientRects()[0].height
+          $e = $(element)
+          $e.mousemove (e) ->
+            padding = (Math.floor(e.offsetY / height) + 1) * height
+            if padding == height
+              padding = 0
+            if element.style.paddingBottom != padding + 'px'
+              element.style.paddingBottom = padding + 'px'
+
+          $e.mouseleave (e) ->
+            $e.removeAttr 'style'
+
+          $e.click (e) ->
             attrs = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind']
-            old_attr = element.dataset['attribute']
-            new_attr = attrs[(attrs.indexOf(old_attr) + 1) % attrs.length]
-            element.dataset['attribute'] = new_attr
+            i = Math.floor(e.offsetY / height)
+            if i > 0
+              element.dataset['attribute'] = attrs[i - 1]
+            
+          
         else if element.classList.contains('level')
           $(element).click (e) ->
             delta = 0

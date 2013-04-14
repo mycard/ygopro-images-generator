@@ -29,13 +29,30 @@
           return this.document.value = $('.card')[0].outerHTML;
         });
         $('.editable').each(function(_, element) {
+          var $e, height;
           if (element.classList.contains('attribute')) {
-            return $(element).click(function(e) {
-              var attrs, new_attr, old_attr;
+            height = element.getClientRects()[0].height;
+            $e = $(element);
+            $e.mousemove(function(e) {
+              var padding;
+              padding = (Math.floor(e.offsetY / height) + 1) * height;
+              if (padding === height) {
+                padding = 0;
+              }
+              if (element.style.paddingBottom !== padding + 'px') {
+                return element.style.paddingBottom = padding + 'px';
+              }
+            });
+            $e.mouseleave(function(e) {
+              return $e.removeAttr('style');
+            });
+            return $e.click(function(e) {
+              var attrs, i;
               attrs = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind'];
-              old_attr = element.dataset['attribute'];
-              new_attr = attrs[(attrs.indexOf(old_attr) + 1) % attrs.length];
-              return element.dataset['attribute'] = new_attr;
+              i = Math.floor(e.offsetY / height);
+              if (i > 0) {
+                return element.dataset['attribute'] = attrs[i - 1];
+              }
             });
           } else if (element.classList.contains('level')) {
             return $(element).click(function(e) {
