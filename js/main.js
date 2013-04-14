@@ -29,7 +29,7 @@
           return this.document.value = $('.card')[0].outerHTML;
         });
         $('.editable').each(function(_, element) {
-          var $e, height;
+          var $e, get_file, get_url, height, src_reg;
           if (element.classList.contains('attribute')) {
             height = element.getClientRects()[0].height;
             $e = $(element);
@@ -69,6 +69,79 @@
                 element.dataset['level'] = new_level;
               }
               return false;
+            });
+          } else if (element.classList.contains('image')) {
+            src_reg = /src="((http|https|ftp):\/\/[^"]*)"/;
+            get_file = function(dataTransfer) {
+              var f, file, _i, _len, _ref;
+              file = null;
+              if (dataTransfer.files.length > 0) {
+                _ref = dataTransfer.files;
+                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                  f = _ref[_i];
+                  if (f.type.indexOf('image/') === 0) {
+                    file = f;
+                    break;
+                  }
+                }
+              }
+              return file;
+            };
+            get_url = function(dataTransfer) {
+              var data, result, url;
+              url = null;
+              data = dataTransfer.getData('text/html');
+              if (data) {
+                result = data.match(src_reg);
+                if (result) {
+                  url = result[1];
+                }
+              }
+              if (!url) {
+                data = dataTransfer.getData('text/uri-list');
+                if (data) {
+                  url = data.split(/\n|\r/)[0];
+                }
+              }
+              if (!url) {
+                data = dataTransfer.getData('text/plain');
+                if (data.match(/(http|https|ftp):\/\//)) {
+                  url = data;
+                }
+              }
+              return url;
+            };
+            element.addEventListener('dragenter', function(e) {
+              e.preventDefault();
+              if (get_file(e.dataTransfer) || get_url(e.dataTransfer)) {
+                element.classList.add('drop-here');
+                return e.dataTransfer.dropEffect = 'copy';
+              }
+            });
+            element.addEventListener('dragover', function(e) {
+              return e.preventDefault();
+            });
+            element.addEventListener('dragleave', function(e) {
+              element.classList.remove('drop-here');
+              return e.preventDefault();
+            });
+            return element.addEventListener('drop', function(e) {
+              var file, r, url;
+              element.classList.remove('drop-here');
+              file = get_file(e.dataTransfer);
+              if (file) {
+                r = new FileReader();
+                r.onload = function(e) {
+                  return element.src = e.target.result;
+                };
+                r.readAsDataURL(file);
+              } else {
+                url = get_url(e.dataTransfer);
+                if (url) {
+                  element.src = url;
+                }
+              }
+              return e.preventDefault();
             });
           } else {
             element.contentEditable = "plaintext-only";

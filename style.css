@@ -183,6 +183,12 @@
     height: 306px;
 }
 
+.drop-here {
+  border: 8px dashed #0055aa;
+  margin-left: -8px;
+  margin-top: -8px;
+}
+
 .monster_type {
     position: absolute;
     left: 34px;

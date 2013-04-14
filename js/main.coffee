@@ -47,7 +47,6 @@ $(document).ready ->
             if i > 0
               element.dataset['attribute'] = attrs[i - 1]
             
-          
         else if element.classList.contains('level')
           $(element).click (e) ->
             delta = 0
@@ -61,8 +60,59 @@ $(document).ready ->
             if new_level != old_level && new_level > 0 && new_level <= 12
               element.dataset['level'] = new_level
             false
-              
-          # Level
+        else if element.classList.contains('image')
+          src_reg = /src="((http|https|ftp):\/\/[^"]*)"/
+          get_file = (dataTransfer) ->
+            file = null
+            if dataTransfer.files.length > 0
+              for f in dataTransfer.files
+                if f.type.indexOf('image/') == 0
+                  file = f
+                  break
+            file
+
+          get_url = (dataTransfer) ->
+            url = null
+            data = dataTransfer.getData('text/html')
+            if data
+              result = data.match(src_reg)
+              if result
+                url = result[1]
+            if !url
+              data = dataTransfer.getData('text/uri-list')
+              if data
+                url = data.split(/\n|\r/)[0]
+            if !url
+              data = dataTransfer.getData('text/plain')
+              if data.match(/(http|https|ftp):\/\//)
+                url = data
+            url
+
+          element.addEventListener 'dragenter', (e) ->
+            e.preventDefault()
+            if get_file(e.dataTransfer) || get_url(e.dataTransfer)
+              element.classList.add('drop-here')
+              e.dataTransfer.dropEffect = 'copy'
+          element.addEventListener 'dragover', (e) ->
+            e.preventDefault()
+
+          element.addEventListener 'dragleave', (e) ->
+              element.classList.remove('drop-here')
+              e.preventDefault()
+
+          element.addEventListener 'drop', (e) ->
+            element.classList.remove('drop-here')
+            file = get_file(e.dataTransfer)
+            if file
+              r = new FileReader()
+              r.onload = (e) ->
+                element.src = e.target.result
+              r.readAsDataURL(file)
+            else
+              url = get_url(e.dataTransfer)
+              if url
+                element.src = url
+            e.preventDefault()
         else
           element.contentEditable = "plaintext-only"
           if element.contentEditable != "plaintext-only"
