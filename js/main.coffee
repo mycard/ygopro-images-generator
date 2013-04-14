@@ -27,20 +27,13 @@ $(document).ready ->
           $(element).removeClass 'editable'
         @document.value = $('.card')[0].outerHTML
 
-      #editable
-      $('.attribute').editable (value, settings) ->
-        $(this).attr 'data-attribute', value
-      , {
-        placeholder: ""
-        data: JSON.stringify {'dark': '暗', 'divine': '神', 'earth': '地', 'fire': '炎', 'light': '光', 'water': '水', 'wind': '风'}
-        type: 'select'
-        submit: 'OK'
-        }
-
-
       $('.editable').each (_, element) ->
         if element.classList.contains('attribute')
-          # TODO(lynn): Improve Attribute editing.
+          $(element).click (e) ->
+            attrs = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind']
+            old_attr = element.dataset['attribute']
+            new_attr = attrs[(attrs.indexOf(old_attr) + 1) % attrs.length]
+            element.dataset['attribute'] = new_attr
         else if element.classList.contains('level')
           $(element).click (e) ->
             delta = 0

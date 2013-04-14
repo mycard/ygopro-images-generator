@@ -28,25 +28,15 @@
           });
           return this.document.value = $('.card')[0].outerHTML;
         });
-        $('.attribute').editable(function(value, settings) {
-          return $(this).attr('data-attribute', value);
-        }, {
-          placeholder: "",
-          data: JSON.stringify({
-            'dark': '暗',
-            'divine': '神',
-            'earth': '地',
-            'fire': '炎',
-            'light': '光',
-            'water': '水',
-            'wind': '风'
-          }),
-          type: 'select',
-          submit: 'OK'
-        });
         $('.editable').each(function(_, element) {
           if (element.classList.contains('attribute')) {
-
+            return $(element).click(function(e) {
+              var attrs, new_attr, old_attr;
+              attrs = ['dark', 'divine', 'earth', 'fire', 'light', 'water', 'wind'];
+              old_attr = element.dataset['attribute'];
+              new_attr = attrs[(attrs.indexOf(old_attr) + 1) % attrs.length];
+              return element.dataset['attribute'] = new_attr;
+            });
           } else if (element.classList.contains('level')) {
             return $(element).click(function(e) {
               var delta, new_level, old_level;
