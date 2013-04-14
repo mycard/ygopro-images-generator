@@ -77,6 +77,7 @@
     height: 25px;
     background: url(mse/data/yugioh-caicai-levels.mse-symbol-font/star.png) repeat-x;
     background-size: 25px 25px;
+    white-space: nowrap;
 }
 .level[data-level="1"]{width: 25px}
 .level[data-level="2"]{width: 50px}
@@ -90,6 +91,31 @@
 .level[data-level="10"]{width: 250px}
 .level[data-level="11"]{width: 275px}
 .level[data-level="12"]{width: 300px}
+
+.level.editable:hover::before,
+.level.editable:hover::after {
+  position: relative;
+  width: 25px;
+  height: 100%;
+  left: -25px;
+  display: inline-block;
+  font-size: 25px;
+  line-height: 25px;
+  text-align: center;
+  background: rgba(200, 200, 200, 0.3);
+  content: "+";
+}
+
+.level.editable:hover::after {
+  content: "-";
+  left: 100%;
+  margin-left: -25px;
+}
+
+[contenteditable]:active,
+[contenteditable]:hover {
+  background: rgba(255,255,255,0.3);
+}
 
 .image {
     position: absolute;

@@ -21,12 +21,13 @@ $(document).ready ->
 
       #submit
       $('#card_form').submit ->
+        $('.editable').each (_, element) ->
+          element.contentEditable = 'false'
+          $(element).removeAttr 'contentEditable'
+          $(element).removeClass 'editable'
         @document.value = $('.card')[0].outerHTML
 
       #editable
-      $('.name').editable (value, settings) ->
-        value
-
       $('.attribute').editable (value, settings) ->
         $(this).attr 'data-attribute', value
       , {
@@ -37,26 +38,35 @@ $(document).ready ->
         }
 
 
-      $('.monster_type').editable (value, settings) ->
-        value
-      $('.number').editable (value, settings) ->
-        value
-      $('.edition').editable (value, settings) ->
-        value
-      $('.rule_text').editable (value, settings) ->
-        value
-      , {
-        type: 'textarea',
-        submit: 'OK'
-        }
-      $('.name').editable (value, settings) ->
-        value
-      $('.gamecode').editable (value, settings) ->
-        value
-      $('.atk').editable (value, settings) ->
-        value
-      $('.def').editable (value, settings) ->
-        value
+      $('.editable').each (_, element) ->
+        if element.classList.contains('attribute')
+          # TODO(lynn): Improve Attribute editing.
+        else if element.classList.contains('level')
+          $(element).click (e) ->
+            delta = 0
+            if e.offsetX < 0
+              delta = 1
+            else if e.offsetX > element.getClientRects()[0].width
+              delta = -1
+
+            old_level = parseInt(element.dataset['level'])
+            new_level = old_level + delta
+            if new_level != old_level && new_level > 0 && new_level <= 12
+              element.dataset['level'] = new_level
+            false
+              
+          # Level
+        else
+          element.contentEditable = "plaintext-only"
+          if element.contentEditable != "plaintext-only"
+            element.contentEditable = "true"
+
+        #$('.rule_text').editable (value, settings) ->
+        #value
+        #, {
+        #type: 'textarea',
+        #submit: 'OK'
+        #}
 
       #batch
       $('#all_button').click ->

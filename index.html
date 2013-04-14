@@ -11,26 +11,26 @@
     <link rel="stylesheet" href="style.css"/>
     <script id="card_template" type="text/x-jquery-tmpl">
         <div class="card ${category} ${card_type}">
-            <span class="name">${name}</span>
-            <span class="attribute" data-attribute="${attribute}"></span>
+            <span class="name editable">${name}</span>
+            <span class="attribute editable" data-attribute="${attribute}"></span>
 
-            <div class="level" data-level="${level}"></div>
+            <div class="level editable" data-level="${level}"></div>
             <img class="image"
                  src="${image_url}"/>
-            <span class="monster_type">【${$.i18n.prop('type.'+type)}·${$.i18n.prop('card_type.'+card_type)}】</span>
-            <span class="number">TH07-ZH998</span>
-            <span class="edition">DUEL TERMINAL</span>
+            <span class="monster_type editable">【${$.i18n.prop('type.'+type)}·${$.i18n.prop('card_type.'+card_type)}】</span>
+            <span class="number editable">TH07-ZH998</span>
+            <span class="edition editable">DUEL TERMINAL</span>
 
-            <div class="rule_text">${description}</div>
+            <div class="rule_text editable">${description}</div>
             <hr class="hr"/>
-            <span class="gamecode">${id}</span>
+            <span class="gamecode editable">${id}</span>
 
             <div class="rarity2"></div>
-            <span class="copyright">©1996 KAZUKI TAKAHASHI</span>
+            <span class="copyright editable">©1996 KAZUKI TAKAHASHI</span>
             <span class="atk_title">ATK/ </span>
             <span class="def_title">DEF/ </span>
-            <span class="atk">${atk}</span>
-            <span class="def">${def}</span>
+            <span class="atk editable">${atk}</span>
+            <span class="def editable">${def}</span>
         </div>
     </script>
 </head>
