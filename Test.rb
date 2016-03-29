@@ -8,10 +8,12 @@ def unit_test1
 end
 
 def unit_test2
+  # remember to delete files under mse-sets\ first.
+  # That will be added later
   require './Sqlite.rb'
-  Global.language = 'cn'
+  Global.language = 'jp'
   data = Sqlite.split Sqlite.load
-  data = [data[10]]
+  data = [data[12]]
   require './MSETranslator.rb'
   MSETranslator.generate_mse_all(data)
 end
@@ -21,4 +23,5 @@ def unit_test3
   MSETranslator.export_mse_all
 end
 
+unit_test2
 unit_test3

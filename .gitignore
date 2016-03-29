@@ -5,4 +5,3 @@ ygopro-images/*
 ygopro-images-raw/*.jpg
 *.mse-set
 *.log
-Authorize.rb
