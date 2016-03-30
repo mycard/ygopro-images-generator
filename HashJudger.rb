@@ -1,5 +1,4 @@
 # Judge the hash.
-# offer the CSV version and JSON Version.
 # Use the JSON Version.
 
 require 'JSON'
@@ -7,6 +6,7 @@ require File.dirname(__FILE__) + '/Authorize.rb'
 require File.dirname(__FILE__) + '/Global.rb'
 require File.dirname(__FILE__) + '/Log.rb'
 require File.dirname(__FILE__) + '/Sqlite.rb'
+require File.dirname(__FILE__) + '/YgoCoreJudgers.rb'
 
 module HashJudger
 	module_function
@@ -36,20 +36,24 @@ module HashJudger
 		return [Authorize.md5_file(image_path), Authorize.md5(data)]
 	end
 
+	@@temp_id_to_data = {}
 	def generate_document(sql_data)
 		answer = {}
+		@@temp_id_to_data = {}
 		for data in sql_data
-			id = data[0]
+			id = YGOCoreJudgers.get_id data
 			hash = self.generate_hash id, data
-			answer[id.to_s] = hash if hash != nil
+			next if hash == nil
+			answer[id.to_s] = hash
+			@@temp_id_to_data[id.to_s] = data
 		end 
 		return answer 
 	end
 
-	def compare
+	def compare(data)
 		# 读取两组数据
 		old_data = self.load
-		new_data = generate_document(Sqlite.load)
+		new_data = generate_document(data)
 		# 生成编号序列
 		# 添加
 		adds = new_data.keys - old_data.keys
@@ -67,6 +71,8 @@ module HashJudger
 			Log.logger.info "Following cards removed:"
 			removes.each {|id| Log.logger.info "#{[id]}"}
 		end
+		adds.map! {|id| @@temp_id_to_data[id]}
+		removes.map!{|id| @@temp_id_to_data[id]}
 		# 公共部分
 		commons = new_data.keys & old_data.keys
 		changes = []
@@ -77,13 +83,13 @@ module HashJudger
 			new_piece = new_data[id]
 			if old_piece[0] != new_piece[0] and old_piece[1] != new_piece[1]
 				Log.logger.info "[#{id}] Both changed"
-				changes.push id
+				changes.push @@temp_id_to_data[id]
 			elsif old_piece[0] != new_piece[0]
 				Log.logger.info "[#{id}] image changed"
-				changes.push id
+				changes.push @@temp_id_to_data[id]
 			elsif old_piece[1] != new_piece[1]
 				Log.logger.info "[#{id}] data changed"
-				changes.push id
+				changes.push @@temp_id_to_data[id]
 			end
 		end
 		Log.logger.info "Oooooops but no data or file changed." if changes == []

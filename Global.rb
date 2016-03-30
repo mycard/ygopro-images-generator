@@ -12,6 +12,7 @@ module Global
 		attr_accessor :answer_uri
 		attr_accessor :mse_path
 		attr_accessor :mse_set_path
+		attr_accessor :sql_fix_name
 	end
 	self.language = 'cn'
 	self.git_path = 'ygopro-images-raw'
@@ -22,6 +23,7 @@ module Global
 	self.answer_path = "ygopro-images"
 	self.answer_uri = "https://github.com/mycard/ygo-images.git"
 	self.mse_path = "MagicSetEditor2"
+	self.sql_fix_name = "fix.sql"
 	self.mse_set_path = "mse-sets"
 	module_function
 	def full_database_path

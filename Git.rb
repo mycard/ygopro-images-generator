@@ -13,11 +13,7 @@ module Git
 		return `cd #{global.answer_path} && git push`
 	end
 
-	def commit
-
-	end
-
-	def hook
-
+	def commit(message = "")
+		return `cd #{global.answer_path} && git add . && git commit -a -m \"Update card images\"`
 	end
 end

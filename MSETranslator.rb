@@ -1,7 +1,8 @@
 require File.dirname(__FILE__) + '/MSEConstants.rb'
-require File.dirname(__FILE__) + '/YGOCoreJudgers.rb'
+require File.dirname(__FILE__) + '/YgoCoreJudgers.rb'
 require File.dirname(__FILE__) + '/Global.rb'
 require File.dirname(__FILE__) + '/Log.rb'
+require 'zip'
 
 module MSETranslator
 	module_function
@@ -94,7 +95,6 @@ module MSETranslator
 	end
 
 	def generate_mse(data, key = "")
-		require 'zip'
 		path = File.join Global.mse_set_path, "data#{key}-#{Global.language}.mse-set" 
 		clear_data = []
 		Zip::File.open(path, Zip::File::CREATE) do |zipfile|
