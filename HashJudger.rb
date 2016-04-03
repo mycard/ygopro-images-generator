@@ -1,7 +1,7 @@
 # Judge the hash.
 # Use the JSON Version.
 
-require 'JSON'
+require 'json'
 require File.dirname(__FILE__) + '/Authorize.rb'
 require File.dirname(__FILE__) + '/Global.rb'
 require File.dirname(__FILE__) + '/Log.rb'

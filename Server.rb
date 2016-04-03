@@ -2,7 +2,7 @@
 
 require "sinatra"
 require File.dirname(__FILE__) + "/Git.rb"
-require File.dirname(__FILE__) + "/Command.rb"
+require File.dirname(__FILE__) + "/Commands.rb"
 
 post '/command' do
 	
