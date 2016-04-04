@@ -5,3 +5,7 @@
 [submodule "ygopro-images-raw"]
 	path = ygopro-images-raw
 	url = https://github.com/mycard/ygopro-images-raw.git
+[submodule "ygopro-database"]
+	path = ygopro-database
+	url = https://github.com/mycard/ygopro-database.git
+	branch = build
