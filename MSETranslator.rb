@@ -122,7 +122,7 @@ module MSETranslator
 
 	def export_mse(full_file_name)
 		mse = Global.full_mse_path
-		command = "wine #{mse} --export #{full_file_name} #{Global.full_answer_path}/{card.gamecode}.jpg"
+		command = "wine32 #{mse} --export #{full_file_name} #{Global.full_answer_path}/{card.gamecode}.jpg"
 		Log.logger.info "exporting #{full_file_name} command is: #{command}"
 		`#{command}`
 	end
