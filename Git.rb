@@ -10,10 +10,10 @@ module Git
 	end
 
 	def push
-		return `cd #{Global.answer_path} && git push`
+		return `cd #{Global.full_answer_path} && git push`
 	end
 
 	def commit(message = "")
-		return `cd #{Global.answer_path} && git add . && git commit -a -m \"Update card images\"`
+		return `cd #{Global.full_answer_path} && git add . && git commit -a -m \"Update card images\"`
 	end
 end
