@@ -9,3 +9,6 @@
 	path = ygopro-database
 	url = https://github.com/mycard/ygopro-database.git
 	branch = build
+[submodule "ygopro-images"]
+	path = ygopro-images
+	url = https://github.com/mycard/ygopro-images.git
