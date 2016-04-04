@@ -16,4 +16,8 @@ COPY magicseteditor/fonts /root/.fonts
 RUN cp -r /usr/src/app/ygopro-database/* /usr/src/app/ygopro-images-raw/
 
 ENV DISPLAY=:0.0
+ENV WINEARCH=win32
+ENV RACK_ENV=production
+RUN wineboot -i
+COPY magicseteditor/fonts /root/.wine/drive_c/windows/Fonts
 CMD ["./entrypoint.sh"]
