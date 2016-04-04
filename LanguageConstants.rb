@@ -46,5 +46,4 @@ class LanguageConstants
 			self.languages[locale].monster_effect_head = value['monster_effect_head']
 		end
         end
-p self.languages
 end

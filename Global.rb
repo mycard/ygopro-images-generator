@@ -5,6 +5,7 @@ module Global
 		attr_accessor :language
 		attr_accessor :git_path
 		attr_accessor :git_uri
+		attr_accessor :database_path
 		attr_accessor :database_name
 		attr_accessor :temp_database_name
 		attr_accessor :image_type
@@ -15,10 +16,11 @@ module Global
 		attr_accessor :mse_set_path
 		attr_accessor :sql_fix_name
 	end
-	self.language = 'cn'
+	self.language = 'zh-CN'
 	self.git_path = 'ygopro-images-raw'
+	self.database_path = 'ygopro-database'
 	self.git_uri = 'https://github.com/mycard/ygopro-images-raw.git'
-	self.database_name = 'cards-%s.cdb'
+	self.database_name = '%s.cdb'
 	self.temp_database_name = "working-cards.cdb"
 	self.image_type = '.jpg'
 	self.records_name = "records.json"
@@ -29,7 +31,7 @@ module Global
 	self.mse_set_path = "mse-sets"
 	module_function
 	def full_database_path
-		return File.join self.git_path, sprintf(self.database_name, self.language)
+		return File.join self.database_path, sprintf(self.database_name, self.language)
 	end
 
 	def full_image_path
