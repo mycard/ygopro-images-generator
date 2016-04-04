@@ -51,4 +51,4 @@ zh-CN:
       - "幻龙族"
   pendulum_effect_head: !ruby/regexp /←\\d 【灵摆】 \\d→(\\n)?/
   monster_effect_head: "\n【怪兽效果】\n"
-
+  mse_language: cn

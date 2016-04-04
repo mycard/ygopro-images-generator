@@ -8,7 +8,7 @@ module MSETranslator
 	module_function
 
 	def write_set(file, set)
-		file.write(sprintf(MSEConstants::MSEConfig::Head, Global.language.upcase))
+		file.write(sprintf(MSEConstants::MSEConfig::Head, LanguageConstants.current.mse_language.upcase))
 		for card in set
 			self.write_card(file, card)
 		end

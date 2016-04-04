@@ -28,6 +28,7 @@ class LanguageConstants
 	attr_accessor :pendulum_effect_head
 	attr_accessor :monster_effect_head
 	attr_accessor :term_races # 偷个鸡
+	attr_accessor :mse_language
 
 	class << self
 		attr_accessor :languages
@@ -44,6 +45,7 @@ class LanguageConstants
 			end
 			self.languages[locale].pendulum_effect_head = value['pendulum_effect_head']
 			self.languages[locale].monster_effect_head = value['monster_effect_head']
+			self.languages[locale].mse_language = value['mse_language']
 		end
         end
 end
