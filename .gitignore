@@ -6,3 +6,4 @@ ygopro-images-raw/*.jpg
 *.mse-set
 *.log
 *.cdb
+records.json
