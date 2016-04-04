@@ -1,0 +1,4 @@
+[submodule "magicseteditor"]
+	path = magicseteditor
+	url = https://github.com/mycard/magicseteditor.git
+	branch = win32

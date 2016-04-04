@@ -24,7 +24,7 @@ module Global
 	self.records_name = "records.json"
 	self.answer_path = "ygopro-images-%s"
 	self.answer_uri = "https://github.com/mycard/ygo-images.git"
-	self.mse_path = "MagicSetEditor2"
+	self.mse_path = "magicseteditor"
 	self.sql_fix_name = "fix.sql"
 	self.mse_set_path = "mse-sets"
 	module_function
