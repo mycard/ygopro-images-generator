@@ -2,3 +2,6 @@
 	path = magicseteditor
 	url = https://github.com/mycard/magicseteditor.git
 	branch = win32
+[submodule "ygopro-images-raw"]
+	path = ygopro-images-raw
+	url = https://github.com/mycard/ygopro-images-raw.git
