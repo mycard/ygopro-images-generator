@@ -11,9 +11,8 @@ COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
 RUN bundle install
 COPY . /usr/src/app
-COPY magicseteditor/fonts /root/.fonts
 
-RUN cp -r /usr/src/app/ygopro-database/* /usr/src/app/ygopro-images-raw/
+RUN cp -r /usr/src/app/ygopro-database/* /usr/src/app/ygopro-images-raw/ #TODO: implement in ruby
 
 ENV DISPLAY=:0.0
 ENV WINEARCH=win32
