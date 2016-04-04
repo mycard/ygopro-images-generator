@@ -35,7 +35,7 @@ CREATE TABLE texts(
 select * from datas join 
 =end
 
-require File.dirname(__FILE__) + '/YgocoreConstants.rb'
+require File.dirname(__FILE__) + '/YgoCoreConstants.rb'
 require File.dirname(__FILE__) + '/MSEConstants.rb'
 require File.dirname(__FILE__) + '/LanguageConstants.rb'
 
