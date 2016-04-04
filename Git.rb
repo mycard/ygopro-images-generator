@@ -6,14 +6,14 @@ module Git
 	module_function
 
 	def pull
-		return `cd #{global.git_path} && git pull`
+		return `cd #{Global.git_path} && git pull`
 	end
 
 	def push
-		return `cd #{global.answer_path} && git push`
+		return `cd #{Global.answer_path} && git push`
 	end
 
 	def commit(message = "")
-		return `cd #{global.answer_path} && git add . && git commit -a -m \"Update card images\"`
+		return `cd #{Global.answer_path} && git add . && git commit -a -m \"Update card images\"`
 	end
 end

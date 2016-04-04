@@ -48,7 +48,7 @@ module MSETranslator
 		end
 		file.write self.generate_line MSEConstants::MSETags::TagAtk, YGOCoreJudgers.get_attack(card)
 		file.write self.generate_line MSEConstants::MSETags::TagDef, YGOCoreJudgers.get_defense(card)
-		file.write self.generate_line MSEConstants::MSETags::TagCode, YGOCoreJudgers.get_id_str(card)
+		file.write self.generate_line MSEConstants::MSETags::TagCode, YGOCoreJudgers.get_id(card).to_s
 	end
 
 	def write_spell(file, card)
@@ -59,7 +59,7 @@ module MSETranslator
 		file.write self.generate_line MSEConstants::MSETags::TagLevel, YGOCoreJudgers.get_level_str(card)
 		file.write self.generate_line MSEConstants::MSETags::TagImage, YGOCoreJudgers.get_image_str(card)
 		file.write self.generate_text MSEConstants::MSETags::TagText, YGOCoreJudgers.get_desc(card)
-		file.write self.generate_line MSEConstants::MSETags::TagCode, YGOCoreJudgers.get_id_str(card)
+		file.write self.generate_line MSEConstants::MSETags::TagCode, YGOCoreJudgers.get_id(card).to_s
 	end
 
 	LineHead = "\t"#"	"

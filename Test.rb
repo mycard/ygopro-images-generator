@@ -13,7 +13,7 @@ def unit_test2
   require './Sqlite.rb'
   Global.language = 'jp'
   data = Sqlite.split Sqlite.load
-  data = [data[12]]
+  data = [data[1]]
   require './MSETranslator.rb'
   MSETranslator.generate_mse_all(data)
 end
@@ -23,5 +23,10 @@ def unit_test3
   MSETranslator.export_mse_all
 end
 
-unit_test2
-unit_test3
+def unit_test_god
+  require './Commands.rb'
+  Global.language = 'jp'
+  Commands.generate_single(10000040)
+end
+
+unit_test_god

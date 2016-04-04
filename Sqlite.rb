@@ -1,4 +1,5 @@
 require 'sqlite3'
+require 'fileutils'
 require File.dirname(__FILE__) + '/Git.rb'
 require File.dirname(__FILE__) + '/Global.rb'
 require File.dirname(__FILE__) + '/Log.rb'
@@ -6,8 +7,15 @@ require File.dirname(__FILE__) + '/MSEConstants.rb'
 
 module Sqlite
 	def self.load(id = -1)
+		path = Global.full_database_path
+		if File.exist? path
+			FileUtils.cp path, Global.temp_database_name
+		else
+			Log.logger.error "No sql databse named #{path}"
+			return nil
+		end
 		begin
-			db = SQLite3::Database.new Global.full_database_path
+			db = SQLite3::Database.new Global.temp_database_name
 			self.run_fix(db)
 			command = "select * from datas join texts on datas.id == texts.id"
 			command += " where datas.id == #{id}" if id > 0

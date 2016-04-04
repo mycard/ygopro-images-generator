@@ -75,4 +75,5 @@ module YGOCoreConstants
 
 	PendulumLeftMod = 65536
 	PendulumRightMod = 16777216
+	QuestionMark = -2
 end

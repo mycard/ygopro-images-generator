@@ -155,11 +155,15 @@ module YGOCoreJudgers
 	end
 
 	def get_attack(card)
-		return card[ColumnAtk].to_i
+		value = card[ColumnAtk].to_i
+		return "?" if value == YGOCoreConstants::QuestionMark
+		value
 	end
 
 	def get_defense(card)
-		return card[ColumnDef].to_i
+		value = card[ColumnDef].to_i
+		return "?" if value == YGOCoreConstants::QuestionMark
+		value
 	end
 
 	def get_level(card)
