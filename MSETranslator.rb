@@ -68,13 +68,7 @@ module MSETranslator
 	end
 
 	def reline(word)
-		word = word.gsub "\n\r", "\n"
-		word = word.gsub "\r\n", "\n"
-		word = word.gsub "\r", ""
-		word = word.gsub "\n\n", "\n"
-		# 这是特别处理。
-		word = word.gsub "。\n", "。" if Global.language == "jp"
-		word
+		word.delete "\r\n"
 	end
 
 	def generate_text(key, word)
