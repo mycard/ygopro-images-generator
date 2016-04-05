@@ -23,19 +23,19 @@ module Commands
 		MSETranslator.export_mse_all
 	end
 
-	def generate_delta(languages = nil)
+	def generate_delta(languages = nil, export = true)
 		Log.logger.info "Generate delta card image(s) with parameter: #{languages.inspect}"
 		if languages == nil
-			process_generate_delta
+			process_generate_delta(export)
 		else
 			for language in languages
 				Global.language = language
-				process_generate_delta
+				process_generate_delta(export)
 			end
 		end
 	end
 
-	def process_generate_delta
+	def process_generate_delta(export = true)
 		Log.logger.info "Generate delta card image with language #{Global.language}"
 		self.clear_mse
 		data = Sqlite.load # Language effected here
@@ -49,7 +49,7 @@ module Commands
 			File.delete path if File.exist? path
 		end
 		MSETranslator.generate_mse_all(data)
-		MSETranslator.export_mse_all
+		MSETranslator.export_mse_all if export
 	end
 
 	def generate_single(id)

@@ -9,8 +9,5 @@ post '/command' do
 end
 
 post '/hook' do
-	Git.pull
-	Commands.generate_delta(Commands.get_languages)
-	Git.commit
-	Git.push
+	system('./generate.sh')
 end
