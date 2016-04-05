@@ -18,37 +18,38 @@ module Commands
 	def generate_all
 		Log.logger.info "Generate all the card images with language #{Global.language}."
 		self.clear_mse
-  	data = Sqlite.split Sqlite.load
-  	MSETranslator.generate_mse_all(data)
-  	MSETranslator.export_mse_all
+		data = Sqlite.split Sqlite.load
+		MSETranslator.generate_mse_all(data)
+		MSETranslator.export_mse_all
 	end
 
 	def generate_delta(languages = nil)
-		Log.logger.info "Generate delta card image(s)"
-		self.clear_mse
-		data = Sqlite.load
-		changes = HashJudger.compare data
-		generates = changes[0] + changes[2]
-		removes = changes[1]
-		data = Sqlite.split generates
+		Log.logger.info "Generate delta card image(s) with parameter: #{languages.inspect}"
 		if languages == nil
-			process(removes, data)
+			process_generate_delta
 		else
 			for language in languages
 				Global.language = language
-				process(removes, data)
+				process_generate_delta
 			end
 		end
 	end
 
-	def process(removes, data)
+	def process_generate_delta
+		Log.logger.info "Generate delta card image with language #{Global.language}"
+		self.clear_mse
+		data = Sqlite.load # Language effected here
+		changes = HashJudger.compare data
+		generates = changes[0] + changes[2]
+		removes = changes[1]
+		data = Sqlite.split generates
 		for card in removes
 			id = YGOCoreJudgers.get_id card
 			path = File.join Global.full_answer_path, id.to_s + Global.image_type
 			File.delete path if File.exist? path
 		end
-  	MSETranslator.generate_mse_all(data)
-  	MSETranslator.export_mse_all
+		MSETranslator.generate_mse_all(data)
+		MSETranslator.export_mse_all
 	end
 
 	def generate_single(id)
