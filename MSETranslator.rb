@@ -68,7 +68,10 @@ module MSETranslator
 	end
 
 	def reline(word)
-		word.delete "\r\n"
+		word = word.delete "\r"
+		word = word.squeeze "\n"
+		word = word.gsub "。\n", "。"
+		word
 	end
 
 	def generate_text(key, word)

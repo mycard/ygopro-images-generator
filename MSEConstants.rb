@@ -30,7 +30,7 @@ module MSEConstants
 		FileConfigName = "Chinese-Simplified"
 		PathImage = "Images"
 		
-		Head = "mse version: 0.3.8\ngame: yugioh\nstylesheet: standard\nset info:\n\tlanguage: %s\n\tedition: \n\tno corner: yes\tST mark is text: yes\n\tpendulum image is small: yes\n\thide gamecode: yes\n"
+		Head = "mse version: 0.3.8\ngame: yugioh\nstylesheet: standard\nset info:\n\tlanguage: %s\n\tedition: \n\tno corner: yes\n\tST mark is text: yes\n\tpendulum image is small: yes\n\thide gamecode: yes\n"
 		End = "version control:\n\ttype: none\napprentice code: "
 
 		Width = 319
