@@ -15,7 +15,6 @@ RUN git config --global user.email "zh99998+mycard@gmail.com"
 RUN git config --global user.name "mycard"
 RUN git config --global push.default simple
 
-ENV DISPLAY=:0.0
 ENV WINEARCH=win32
 ENV RACK_ENV=production
 RUN wineboot -i
