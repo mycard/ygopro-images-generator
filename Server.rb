@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # sinatra server core
 
 require "sinatra"
