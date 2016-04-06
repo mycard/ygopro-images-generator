@@ -23,7 +23,8 @@ def generate
 end
 
 configure do
-    set :status, :idle
+    set :status, :running
+    Thread.new { generate }
 end
 
 post '/hook' do
