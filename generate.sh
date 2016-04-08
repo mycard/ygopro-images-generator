@@ -35,8 +35,8 @@ for locale in locales/*.yml; do
     done
     for image in ygopro-images-${locale}/*.png; do
         id=$(basename "${image}" .png)
-        convert "${image}" -colorspace RGB -resize 177x254 -colorspace sRGB "ygopro-images/${id}.jpg"
-        convert "${image}" -colorspace RGB -resize 44x64 -colorspace sRGB "ygopro-images/thumbnail/${id}.jpg"
+        convert "${image}" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images/${id}.jpg"
+        convert "${image}" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images/thumbnail/${id}.jpg"
     done
     git_push ygopro-images
 done
