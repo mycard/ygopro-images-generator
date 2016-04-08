@@ -22,6 +22,7 @@ git_pull ygopro-database build
 git_pull ygopro-images-raw master
 
 for locale in locales/*.yml; do
+    continue;
     locale=$(basename "${locale}" .yml)
     git_pull ygopro-images ${locale}
     rm -rf ygopro-images-${locale} mse-set
@@ -41,3 +42,9 @@ for locale in locales/*.yml; do
     git_push ygopro-images
 done
 
+#classical
+git_pull ygopro-images classical
+cd ImgGen
+mono ImgGen.exe
+cd ..
+git_push ygopro-images
