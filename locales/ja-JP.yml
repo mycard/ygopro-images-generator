@@ -52,3 +52,4 @@ ja-JP:
   pendulum_effect_head: !ruby/regexp /【Ｐスケール：青(.*)／赤(.*)】(\n)?/
   monster_effect_head: !ruby/regexp /(\n)?【モンスター効果】\n/
   mse_language: jp
+  mse_stylesheet: standard
