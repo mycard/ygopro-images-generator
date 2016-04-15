@@ -285,8 +285,10 @@ module YGOCoreJudgers
 	end
 
 	def get_cardtype_str(card)
-		if self.is_spell card
-				return MSEConstants::MSECardType::Spell
+		if MSEConstants::MSECardType::Special[self.get_id(card)]
+			return MSEConstants::MSECardType::Special[self.get_id(card)]
+		elsif self.is_spell card
+			return MSEConstants::MSECardType::Spell
 		elsif self.is_trap card
 			return MSEConstants::MSECardType::Trap
 		elsif self.is_monster card

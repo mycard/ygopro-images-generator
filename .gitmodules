@@ -1,14 +1,16 @@
 [submodule "magicseteditor"]
 	path = magicseteditor
-	url = https://github.com/mycard/magicseteditor.git
+	url = git@github.com:mycard/magicseteditor.git
 	branch = win32
 [submodule "ygopro-images-raw"]
 	path = ygopro-images-raw
-	url = https://github.com/mycard/ygopro-images-raw.git
+	url = git@github.com:mycard/ygopro-images-raw.git
 [submodule "ygopro-database"]
 	path = ygopro-database
-	url = https://github.com/mycard/ygopro-database.git
-	branch = build
+	url = git@github.com:mycard/ygopro-database.git
 [submodule "ygopro-images"]
 	path = ygopro-images
-	url = https://github.com/mycard/ygopro-images.git
+	url = git@github.com:mycard/ygopro-images.git
+[submodule "ImgGen"]
+	path = ImgGen
+	url = git@github.com:mycard/ImgGen.git
