@@ -2,7 +2,7 @@ environment:
   priv_key:
     secure: jXhRfflLmSjeHkpiio+eaXRFfEi5NfvZXMnJ+86gfK+C4X5eqHRMFUy/YAbk31gna21cd2T2HnahRfnLSdSuJ2h6NnYyk0e62wrlhx3JBVR9QCo+BCxpPB1T6lg6q7T1DKy5RNX3di+Qda9Hr3ZBVezT9ToEaxNI6UhsHw+vsYrHOXKjZ7KBsdVn2xMdw9e6WfbxQ3VDw7lqyxUViyIHSHAKR9voToDYoOEkW5ClSGbdz6+L++/6sveka/jARprJNZKz14PtfeOHuUCjNmUS7PVR6bnvW67YnisovmziqDYFu/mk+Dl7QXROCFwNHLFW3Ss5sjF8Hvhad/PZtmi41ZGPVp0Cp+c8gNmyC4X9bAhdgEeLsjQ5Ds1g9zHeijkQjCmeUvsbZ8KWTEsbIX93bL5jILerMzumcnwn2B6neOZtTh0dgDA5KUq5anmdwZABJquRD8nwfzVDEtdTeP88jS2jsSoz/RJJ7WcyExuRNzQ=
   GIT_SSH_COMMAND: ssh -v
+version: '{build}'
 install:
   - ps: Set-Content c:\users\appveyor\.ssh\id_ecdsa $env:priv_key.Replace(' ', "`n")
-  - ssh -v git@github.com
   - git submodule update --init --recursive
