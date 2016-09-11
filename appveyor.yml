@@ -13,5 +13,6 @@ install:
   - bundle install
   - mv ygopro-database/cards.zh-CN.cdb ygopro-database/zh-CN.cdb
   - echo {} > ygopro-images/records.json
+  - wget -O ygopro-images-raw/10000000.jpg https://github.com/mycard/ygopro-images-raw/raw/master/10000000.jpg
   - ruby generate.rb zh-CN
 #build: off
