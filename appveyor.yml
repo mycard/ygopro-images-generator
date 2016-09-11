@@ -4,9 +4,9 @@ environment:
   GIT_SSH_COMMAND: ssh -v
 version: '{build}'
 install:
-  - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $fileContent = "-----BEGIN EC PRIVATE KEY-----`n"
   - ps: $fileContent += $env:priv_key.Replace(' ', "`n")
-  - ps: $fileContent += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: $fileContent += "`n-----END EC PRIVATE KEY-----`n"
   - ps: Set-Content c:\users\appveyor\.ssh\id_ecdsa $fileContent
   - type c:\users\appveyor\.ssh\id_ecdsa
   - git submodule update --init --recursive
