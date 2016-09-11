@@ -23,13 +23,14 @@ install:
   - mv ygopro-database/cards.zh-CN.cdb ygopro-database/zh-CN.cdb
   - echo {} > ygopro-images/records.json
   - ps: wget https://github.com/mycard/ygopro-images-raw/raw/master/10000000.jpg -OutFile ygopro-images-raw/10000000.jpg
+  - ps: wget https://github.com/mycard/ygopro-images-raw/raw/master/10000001.jpg -OutFile ygopro-images-raw/10000001.jpg
 
 after_build:
   - ruby generate.rb zh-CN
   - magicseteditor\mse.com --export mse-sets\data0-zh-CN.mse-set "ygopro-images-zh-CN\{card.gamecode}.png"
   - mkdir ygopro-images\thumbnail
-  - 'magick "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images\10000000.jpg"'
-  - 'magick "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images\thumbnail\10000000.jpg"'
+  - magick "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images\10000000.jpg"
+  - magick "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images\thumbnail\10000000.jpg"
 
 artifacts:
   - path: ygopro-images
@@ -37,12 +38,12 @@ artifacts:
     type: 7z
 deploy:
   release: latest
-  description: 'Release description'
+  description: 'Automatic uild'
   provider: GitHub
   auth_token:
     secure: itZ9Z1dxEpfPJLdTs/PiY98pVZ3GCLNWfid7eAu7SL88Jl9AIrf/3rviKFEbsnoY # your encrypted token from GitHub
   draft: false
-  prerelease: true
+  prerelease: false
   on:
     branch: master                 # release from master branch only
     #appveyor_repo_tag: true        # deploy on tag push only
