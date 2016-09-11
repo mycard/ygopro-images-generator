@@ -5,4 +5,5 @@ environment:
 version: '{build}'
 install:
   - ps: Set-Content c:\users\appveyor\.ssh\id_ecdsa $env:priv_key.Replace(' ', "`n")
+  - type c:\users\appveyor\.ssh\id_ecdsa 
   - git submodule update --init --recursive
