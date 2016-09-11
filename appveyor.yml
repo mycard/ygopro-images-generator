@@ -29,7 +29,7 @@ after_build:
   #- '"C:\Program Files\ImageMagick-7.0.2-Q16\magick.exe" "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images\10000000.jpg"'
   #- '"C:\Program Files\ImageMagick-7.0.2-Q16\magick.exe" "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images\thumbnail\10000000.jpg"'
   - copy ygopro-images-zh-CN\10000000.png ygopro-images\10000000.jpg
-  - 7z a -t7z ygopro-images-zh-CN.7z ygopro-images
+  #- 7z a -t7z ygopro-images-zh-CN.7z ygopro-images
 
 deploy:
   release: latest
@@ -37,7 +37,10 @@ deploy:
   provider: GitHub
   auth_token:
     secure: itZ9Z1dxEpfPJLdTs/PiY98pVZ3GCLNWfid7eAu7SL88Jl9AIrf/3rviKFEbsnoY # your encrypted token from GitHub
-  artifact: /ygopro-images-.*\.7z/  # upload all NuGet packages to release assets
+  artifact:
+    - path: ygopro-images
+      name: ygopro-images-zh-CN
+      type: 7z
   draft: false
   prerelease: true
   on:
