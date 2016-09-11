@@ -11,5 +11,8 @@ install:
   - git clone git@github.com:mycard/ygopro-database.git
   - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
+  - mv ygopro-database/cards.zh-CN.cdb ygopro-database/zh-CN.cdb
+  - mkdir -p ygopro-images
+  - echo {} > ygopro-images/records.json
   - ruby generate.rb zh-CN
 #build: off
