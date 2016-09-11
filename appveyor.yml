@@ -8,7 +8,7 @@ install:
   - ps: $fileContent += "`n-----END EC PRIVATE KEY-----`n"
   - ps: Set-Content c:\users\appveyor\.ssh\id_ecdsa $fileContent
   - git submodule update --init --recursive ImgGen magicseteditor
-  - git clone ygopro-database
+  - git clone git@github.com:mycard/ygopro-database.git
   - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
   - ruby generate.rb zh-CN
