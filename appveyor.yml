@@ -8,6 +8,7 @@ install:
   - ps: $fileContent += "`n-----END EC PRIVATE KEY-----`n"
   - ps: Set-Content c:\users\appveyor\.ssh\id_ecdsa $fileContent
   #- git submodule update --init --recursive
+  - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
   - ruby generate.rb zh-CN
 #build: off
