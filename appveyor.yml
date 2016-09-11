@@ -25,9 +25,9 @@ install:
 
   # do it
   - ruby generate.rb zh-CN
-  - magicseteditor\mse.com --export mse-sets/data0-zh-CN.mse-set "ygopro-images-zh-CN/{card.gamecode}.png"
-  - convert "ygopro-images-zh-CN/10000000.png" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images/10000000.jpg"
-  - convert "ygopro-images-zh-CN/10000000.png" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images/thumbnail/10000000.jpg"
+  - magicseteditor\mse.com --export mse-sets\data0-zh-CN.mse-set "ygopro-images-zh-CN\{card.gamecode}.png"
+  - convert "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images\10000000.jpg"
+  - convert "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images\thumbnail\10000000.jpg"
   - 7z a -txz ygopro-images-zh-CN.tar.xz ygopro-images-zh-CN
 deploy:
   release: latest
