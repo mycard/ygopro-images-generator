@@ -37,7 +37,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: itZ9Z1dxEpfPJLdTs/PiY98pVZ3GCLNWfid7eAu7SL88Jl9AIrf/3rviKFEbsnoY # your encrypted token from GitHub
-  artifact:
+  artifacts:
     - path: ygopro-images
       name: ygopro-images-zh-CN
       type: 7z
