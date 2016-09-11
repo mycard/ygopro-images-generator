@@ -23,20 +23,21 @@ install:
   - echo {} > ygopro-images/records.json
   - ps: wget https://github.com/mycard/ygopro-images-raw/raw/master/10000000.jpg -OutFile ygopro-images-raw/10000000.jpg
 
-  # do it
+after_build:
   - ruby generate.rb zh-CN
   - magicseteditor\mse.com --export mse-sets\data0-zh-CN.mse-set "ygopro-images-zh-CN\{card.gamecode}.png"
   #- '"C:\Program Files\ImageMagick-7.0.2-Q16\magick.exe" "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images\10000000.jpg"'
   #- '"C:\Program Files\ImageMagick-7.0.2-Q16\magick.exe" "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images\thumbnail\10000000.jpg"'
   - copy ygopro-images-zh-CN\10000000.png ygopro-images\10000000.jpg
   - 7z a -t7z ygopro-images-zh-CN.7z ygopro-images
+
 deploy:
   release: latest
   description: 'Release description'
   provider: GitHub
   auth_token:
     secure: itZ9Z1dxEpfPJLdTs/PiY98pVZ3GCLNWfid7eAu7SL88Jl9AIrf/3rviKFEbsnoY # your encrypted token from GitHub
-  artifact: ygopro-images-zh-CN.7z            # upload all NuGet packages to release assets
+  artifact: /ygopro-images-.*\.7z/  # upload all NuGet packages to release assets
   draft: false
   prerelease: true
   on:
