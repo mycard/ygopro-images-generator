@@ -8,7 +8,7 @@ install:
   - ps: $fileContent += $env:priv_key.Replace(' ', "`n")
   - ps: $fileContent += "`n-----END EC PRIVATE KEY-----`n"
   - ps: Set-Content c:\users\appveyor\.ssh\id_ecdsa $fileContent
-  - git submodule update --init --recursive ImgGen magicseteditor ygopro-images-raw
+  - git submodule update --init --recursive ImgGen magicseteditor #ygopro-images-raw
   - git clone git@github.com:mycard/ygopro-database.git
 
   # environment and system dependency
