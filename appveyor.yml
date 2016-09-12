@@ -8,7 +8,7 @@ install:
   - ps: $fileContent += $env:priv_key.Replace(' ', "`n")
   - ps: $fileContent += "`n-----END EC PRIVATE KEY-----`n"
   - ps: Set-Content c:\users\appveyor\.ssh\id_ecdsa $fileContent
-  - git submodule update --init --recursive ImgGen magicseteditor
+  - git submodule update --init --recursive ImgGen magicseteditor ygopro-images-raw
   - git clone git@github.com:mycard/ygopro-database.git
 
   # environment and system dependency
@@ -19,6 +19,11 @@ install:
   # application dependency
   - bundle install
 
+  # get last build
+  #- ps: wget https://github.com/mycard/ygopro-images-generator/releases/download/latest/ygopro-images-zh-CN.zip -OutFile ygopro-images-zh-CN.zip
+  #- 7z x
+
+
   # mock data
   - mv ygopro-database/cards.zh-CN.cdb ygopro-database/zh-CN.cdb
   - echo {} > ygopro-images/records.json
@@ -27,10 +32,12 @@ install:
 
 after_build:
   - ruby generate.rb zh-CN
-  - magicseteditor\mse.com --export mse-sets\data0-zh-CN.mse-set "ygopro-images-zh-CN\{card.gamecode}.png"
+  - for %i in (mse-sets\data*-zh-CN.mse-set) do magicseteditor\mse.com --export %i "ygopro-images-zh-CN\{card.gamecode}.png"
   - mkdir ygopro-images\thumbnail
-  - magick "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 177x254! -colorspace sRGB "ygopro-images\10000000.jpg"
-  - magick "ygopro-images-zh-CN\10000000.png" -colorspace RGB -resize 44x64! -colorspace sRGB "ygopro-images\thumbnail\10000000.jpg"
+  - 'for %i in (ygopro-images-zh-CN\*.png) do (
+      magick %i -colorspace RGB -resize 177x254! -colorspace sRGB ygopro-images\%~ni.jpg
+      magick %i -colorspace RGB -resize 44x64! -colorspace sRGB ygopro-images\thumbnail\%~ni.jpg
+    )'
 
 artifacts:
   - path: ygopro-images
@@ -38,7 +45,7 @@ artifacts:
     type: 7z
 deploy:
   release: latest
-  description: 'Automatic uild'
+  description: 'Automatic build'
   provider: GitHub
   auth_token:
     secure: itZ9Z1dxEpfPJLdTs/PiY98pVZ3GCLNWfid7eAu7SL88Jl9AIrf/3rviKFEbsnoY # your encrypted token from GitHub
