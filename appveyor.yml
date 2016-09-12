@@ -32,11 +32,11 @@ install:
 
 after_build:
   - ruby generate.rb zh-CN
-  - for %i in (mse-sets\data*-zh-CN.mse-set) do magicseteditor\mse.com --export %i "ygopro-images-zh-CN\{card.gamecode}.png"
+  - for %%i in (mse-sets\data*-zh-CN.mse-set) do magicseteditor\mse.com --export %%i "ygopro-images-zh-CN\{card.gamecode}.png"
   - mkdir ygopro-images\thumbnail
-  - 'for %i in (ygopro-images-zh-CN\*.png) do (
-      magick %i -colorspace RGB -resize 177x254! -colorspace sRGB ygopro-images\%~ni.jpg
-      magick %i -colorspace RGB -resize 44x64! -colorspace sRGB ygopro-images\thumbnail\%~ni.jpg
+  - 'for %%i in (ygopro-images-zh-CN\*.png) do (
+      magick %%i -colorspace RGB -resize 177x254! -colorspace sRGB ygopro-images\%%~ni.jpg
+      magick %%i -colorspace RGB -resize 44x64! -colorspace sRGB ygopro-images\thumbnail\%%~ni.jpg
     )'
 
 artifacts:
