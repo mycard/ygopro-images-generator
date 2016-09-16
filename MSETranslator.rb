@@ -109,6 +109,7 @@ module MSETranslator
 		end
 		Log.logger.info("Finished a pack named data#{key}-#{Global.language}.mse-set with following #{clear_data.count} cards:")
 		clear_data.each {|card| Log.logger.info(YGOCoreJudgers.get_log_str(card))}
+		Log.out.info "#{key}-#{Global.language}.mse-set"
 	end
 
 	def generate_mse_all(datas)
