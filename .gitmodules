@@ -2,6 +2,7 @@
 	path = magicseteditor
 	url = git@github.com:mycard/magicseteditor.git
 	branch = win32
+	shallow = true
 [submodule "ygopro-images-raw"]
 	path = ygopro-images-raw
 	url = git@github.com:mycard/ygopro-images-raw.git
@@ -9,6 +10,8 @@
 [submodule "ygopro-database"]
 	path = ygopro-database
 	url = git@github.com:mycard/ygopro-database.git
+	shallow = true
 [submodule "ImgGen"]
 	path = ImgGen
 	url = git@github.com:mycard/ImgGen.git
+	shallow = true
