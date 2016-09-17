@@ -5,6 +5,7 @@
 [submodule "ygopro-images-raw"]
 	path = ygopro-images-raw
 	url = git@github.com:mycard/ygopro-images-raw.git
+	shallow = true
 [submodule "ygopro-database"]
 	path = ygopro-database
 	url = git@github.com:mycard/ygopro-database.git
