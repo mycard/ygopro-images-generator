@@ -30,6 +30,7 @@ install:
   - bundle install
 
   # data
+  - mkdir ygopro-database
   - curl -o ygopro-database\%locale%.cdb https://github.com/mycard/ygopro-database/raw/master/cards.%locale%.cdb
   - mkdir ygopro-images
   - echo {} > ygopro-images/records.json
