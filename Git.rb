@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # git commands
 
 require File.dirname(__FILE__) + '/Global.rb'

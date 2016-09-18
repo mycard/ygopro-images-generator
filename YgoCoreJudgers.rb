@@ -1,3 +1,4 @@
+# encoding: UTF-8
 
 =begin
 CREATE TABLE datas(

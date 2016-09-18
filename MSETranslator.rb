@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require File.dirname(__FILE__) + '/MSEConstants.rb'
 require File.dirname(__FILE__) + '/YgoCoreJudgers.rb'
 require File.dirname(__FILE__) + '/Global.rb'

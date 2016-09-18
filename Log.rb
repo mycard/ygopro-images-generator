@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # Log
 require 'logger'
 

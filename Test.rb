@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This is a test file.
 
 def unit_test1

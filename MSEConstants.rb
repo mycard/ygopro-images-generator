@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # mse set constants
 
 module MSEConstants

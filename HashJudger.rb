@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # Judge the hash.
 # Use the JSON Version.
 
