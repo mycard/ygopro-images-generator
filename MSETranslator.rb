@@ -102,7 +102,8 @@ module MSETranslator
 					zipfile.add id.to_s + Global.image_type, image_name
 					clear_data.push card
 				else
-					Log.logger.warn "#{YGOCoreJudgers.get_log_str(card)} has no proper image for. Skipped."
+					Log.logger.error "#{YGOCoreJudgers.get_log_str(card)} has no proper image for."
+					$missing_image = true
 				end
 			end
 			zipfile.get_output_stream(MSEConstants::SetFileName) { |os| write_set(os, clear_data) }
@@ -113,9 +114,13 @@ module MSETranslator
 	end
 
 	def generate_mse_all(datas)
+		$missing_image = false
 		for i in 0...datas.size
 			generate_mse(datas[i], i)
-		end	
+		end
+		if $missing_image
+			raise 'missing image'
+		end
 	end
 
 	def export_mse(full_file_name)
