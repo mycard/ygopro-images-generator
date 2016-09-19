@@ -47,6 +47,8 @@ module Commands
 			id = YGOCoreJudgers.get_id card
 			path = File.join Global.full_answer_path, id.to_s + Global.image_type
 			File.delete path if File.exist? path
+			path = File.join Global.full_answer_path, 'thumbnail', id.to_s + Global.image_type
+			File.delete path if File.exist? path
 		end
 		MSETranslator.generate_mse_all(data)
 		MSETranslator.export_mse_all if export
