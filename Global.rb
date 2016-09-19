@@ -24,7 +24,7 @@ module Global
 	self.temp_database_name = "working-cards.cdb"
 	self.image_type = '.jpg'
 	self.records_name = "records.json"
-	self.answer_path = "ygopro-images-%s"
+	self.answer_path = "ygopro-images"
 	self.answer_uri = "https://github.com/mycard/ygo-images.git"
 	self.mse_path = "magicseteditor"
 	self.sql_fix_name = "fix.sql"
