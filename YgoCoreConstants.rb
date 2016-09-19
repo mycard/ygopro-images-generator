@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # ygocore constants
 
 module YGOCoreConstants

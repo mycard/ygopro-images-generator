@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # Check the command is legal or not
 require 'json'
 require 'digest/md5'

@@ -1,4 +1,3 @@
-# encoding: UTF-8
 require 'sqlite3'
 require 'fileutils'
 require File.dirname(__FILE__) + '/Git.rb'

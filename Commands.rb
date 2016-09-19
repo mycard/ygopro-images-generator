@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # Commands Reflector
 require File.dirname(__FILE__) + '/Global.rb'
 require File.dirname(__FILE__) + '/Sqlite.rb'
