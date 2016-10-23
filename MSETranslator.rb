@@ -3,6 +3,7 @@ require File.dirname(__FILE__) + '/YgoCoreJudgers.rb'
 require File.dirname(__FILE__) + '/Global.rb'
 require File.dirname(__FILE__) + '/Log.rb'
 require 'zip'
+Zip.default_compression = Zlib::NO_COMPRESSION
 
 module MSETranslator
 	module_function
