@@ -89,7 +89,7 @@ module MSETranslator
 		return ["", words[0]] if words.count <= 1
 		pendulum_effect = words[0].split(LanguageConstants.current.pendulum_effect_head).last
 		pendulum_effect = "" if pendulum_effect == nil
-		return [pendulum_effect, words[1]]
+		return [pendulum_effect, words[words.length - 1]]
 	end
 
 	def generate_mse(data, key = "")
