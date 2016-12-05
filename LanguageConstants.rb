@@ -49,5 +49,5 @@ class LanguageConstants
 			self.languages[locale].mse_language = value['mse_language']
 			self.languages[locale].mse_stylesheet = value['mse_stylesheet']
 		end
-        end
+	end
 end

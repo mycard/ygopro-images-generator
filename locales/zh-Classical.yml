@@ -50,6 +50,6 @@ zh-CN:
       - "创世神族"
       - "幻龙族"
   pendulum_effect_head: !ruby/regexp /←\d+ 【灵摆】 \d+→\n?/
-  monster_effect_head: !ruby/regexp /\n(?:【怪兽效果】|【怪兽简介】|【怪兽描述】)\n/
+  monster_effect_head: !ruby/regexp /(\n)?(?:【怪兽效果】|【怪兽简介】|【怪兽描述】)\n/
   mse_language: cn
   mse_stylesheet: classical

@@ -25,8 +25,8 @@ end
 
 def unit_test_god
   require './Commands.rb'
-  Global.language = 'jp'
-  Commands.generate_single(10000040)
+  Global.language = 'zh-CN'
+  Commands.generate_single(7127502)
 end
 
 unit_test_god
