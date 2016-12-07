@@ -49,7 +49,7 @@ zh-CN:
       - "Divine-Beast"
       - "Creator God"
       - "Wyrm"
-  pendulum_effect_head: !ruby/regexp /¡û\d+ ¡¾Pendulum¡¿ \d+¡ú\n?/
-  monster_effect_head: !ruby/regexp /(\n)?(?:¡¾Monster Effect¡¿|¡¾Pendulum Effect¡¿|¡¾Category¡¿)\n/
+  pendulum_effect_head: !ruby/regexp /Pendulum Effect\n+?/
+  monster_effect_head: !ruby/regexp /(\n)?Monster Effect\n/
   mse_language: en
   mse_stylesheet: standard
