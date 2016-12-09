@@ -72,6 +72,7 @@ module MSETranslator
 		word = word.delete "\r"
 		word = word.squeeze "\n"
 		word = word.gsub "。\n", "。"
+		word = word.gsub ".\n", "."
 		word
 	end
 
@@ -87,9 +88,9 @@ module MSETranslator
 		word = reline word
 		words = word.split LanguageConstants.current.monster_effect_head
 		return ["", words[0]] if words.count <= 1
-		pendulum_effect = words[0].split(LanguageConstants.current.pendulum_effect_head).last
+		pendulum_effect = words[0].gsub(LanguageConstants.current.pendulum_effect_head, "").strip
 		pendulum_effect = "" if pendulum_effect == nil
-		return [pendulum_effect, words[words.length - 1]]
+		return [pendulum_effect, words[words.length - 1].strip]
 	end
 
 	def generate_mse(data, key = "")
