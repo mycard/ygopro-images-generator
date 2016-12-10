@@ -15,7 +15,7 @@ def unit_test2
   data = Sqlite.split Sqlite.load
   data = [data[1]]
   require './MSETranslator.rb'
-  MSETranslator.generate_mse_all(data)
+  MSETranslator.generate_mse_all(dataw)
 end
 
 def unit_test3
@@ -25,8 +25,8 @@ end
 
 def unit_test_god
   require './Commands.rb'
-  Global.language = 'zh-CN'
-  Commands.generate_single(7127502)
+  Global.language = 'en-US'
+  p MSETranslator.split_effect YGOCoreJudgers.get_desc(Sqlite.load(17390179)[0])
 end
 
 unit_test_god
