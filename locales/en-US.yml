@@ -49,7 +49,7 @@ en-US:
       - "Divine-Beast"
       - "Creator God"
       - "Wyrm"
-  pendulum_effect_head: !ruby/regexp /Pendulum Scale\s?=\s?\d+?\n?\[\s?Pendulum Effect\s?\]\n?(\-n\/a\-)?/
-  monster_effect_head: !ruby/regexp /\n?(-+?\n+)?\n?\[\s?(Monster Effect|Flavor Text)\s?\]\n/
+  pendulum_effect_head: !ruby/regexp /Pendulum Scale\s*=\s*\d+\n*\[\s*Pendulum Effect\s*\]\n*(\-n\/a\-)*/
+  monster_effect_head: !ruby/regexp /\n*(-+?\n+)*\n*\[\s*(Monster Effect|Flavor Text)\s*\]\s*?\n/
   mse_language: en
   mse_stylesheet: standard
