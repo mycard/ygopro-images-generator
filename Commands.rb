@@ -42,6 +42,10 @@ module Commands
 		changes = HashJudger.compare data
 		generates = changes[0] + changes[2]
 		removes = changes[1]
+		# 这两句是暂时排除 Bug 用。
+		generates = generates.select { |card| card != nil }
+		removes = removes.select { |card| card != nil }
+		# 因此可能导致无法预期的后果。
 		data = Sqlite.split generates
 		for card in removes
 			id = YGOCoreJudgers.get_id card
