@@ -1,8 +1,3 @@
-[submodule "magicseteditor"]
-	path = magicseteditor
-	url = git@github.com:mycard/magicseteditor.git
-	branch = win32
-	shallow = true
 [submodule "ImgGen"]
 	path = ImgGen
 	url = git@github.com:mycard/ImgGen.git
