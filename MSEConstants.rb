@@ -105,7 +105,7 @@ module MSEConstants
 		Synchro = "synchro monster"
 		Spell = "spell card"
 		Trap = "trap card"
-		Special = {10000001 => "obelisk", 10000011 => "ra", 10000021 => "slifer"} 
+		Special = {10000000 => "obelisk", 10000010 => "ra", 10000020 => "slifer"} 
 	end
 
 	SetFileName = "set"
