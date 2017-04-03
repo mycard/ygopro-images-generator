@@ -3,12 +3,13 @@ require File.dirname(__FILE__) + '/YgoCoreJudgers.rb'
 require File.dirname(__FILE__) + '/Global.rb'
 require File.dirname(__FILE__) + '/Log.rb'
 require 'zip'
+Zip.default_compression = Zlib::NO_COMPRESSION
 
 module MSETranslator
 	module_function
 
 	def write_set(file, set)
-		file.write(sprintf(MSEConstants::MSEConfig::Head, LanguageConstants.current.mse_styleseet, LanguageConstants.current.mse_language.upcase))
+		file.write(sprintf(MSEConstants::MSEConfig::Head, LanguageConstants.current.mse_stylesheet, LanguageConstants.current.mse_language.upcase))
 		for card in set
 			self.write_card(file, card)
 		end
@@ -71,6 +72,7 @@ module MSETranslator
 		word = word.delete "\r"
 		word = word.squeeze "\n"
 		word = word.gsub "。\n", "。"
+		word = word.gsub ".\n", "."
 		word
 	end
 
@@ -86,9 +88,9 @@ module MSETranslator
 		word = reline word
 		words = word.split LanguageConstants.current.monster_effect_head
 		return ["", words[0]] if words.count <= 1
-		pendulum_effect = words[0].split(LanguageConstants.current.pendulum_effect_head).last
+		pendulum_effect = words[0].gsub(LanguageConstants.current.pendulum_effect_head, "").strip
 		pendulum_effect = "" if pendulum_effect == nil
-		return [pendulum_effect, words[1]]
+		return [pendulum_effect, words[words.length - 1].strip]
 	end
 
 	def generate_mse(data, key = "")
@@ -102,19 +104,25 @@ module MSETranslator
 					zipfile.add id.to_s + Global.image_type, image_name
 					clear_data.push card
 				else
-					Log.logger.warn "#{YGOCoreJudgers.get_log_str(card)} has no proper image for. Skipped."
+					Log.logger.error "#{YGOCoreJudgers.get_log_str(card)} has no proper image for."
+					$missing_image = true
 				end
 			end
 			zipfile.get_output_stream(MSEConstants::SetFileName) { |os| write_set(os, clear_data) }
 		end
 		Log.logger.info("Finished a pack named data#{key}-#{Global.language}.mse-set with following #{clear_data.count} cards:")
 		clear_data.each {|card| Log.logger.info(YGOCoreJudgers.get_log_str(card))}
+		puts "#{key}-#{Global.language}.mse-set"
 	end
 
 	def generate_mse_all(datas)
+		$missing_image = false
 		for i in 0...datas.size
 			generate_mse(datas[i], i)
-		end	
+		end
+		if $missing_image
+			raise 'missing image'
+		end
 	end
 
 	def export_mse(full_file_name)

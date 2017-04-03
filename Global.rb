@@ -17,14 +17,14 @@ module Global
 		attr_accessor :sql_fix_name
 	end
 	self.language = 'zh-CN'
-	self.git_path = 'ygopro-images-raw'
+	self.git_path = 'pics'
 	self.database_path = 'ygopro-database'
 	self.git_uri = 'https://github.com/mycard/ygopro-images-raw.git'
 	self.database_name = '%s.cdb'
 	self.temp_database_name = "working-cards.cdb"
 	self.image_type = '.jpg'
-	self.records_name = "ygopro-images/records.json"
-	self.answer_path = "ygopro-images-%s"
+	self.records_name = "records.json"
+	self.answer_path = "ygopro-images"
 	self.answer_uri = "https://github.com/mycard/ygo-images.git"
 	self.mse_path = "magicseteditor"
 	self.sql_fix_name = "fix.sql"
