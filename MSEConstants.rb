@@ -53,6 +53,7 @@ module MSEConstants
 		TagText = "rule text"
 		TagAtk = "attack"
 		TagDef = "defense"
+		TagLink = "link number"
 		TagNumber = "number"
 		TagRarity = "rarity"
 		TagPendulum = "pendulum"
@@ -103,6 +104,7 @@ module MSEConstants
 		Token = "token monster"
 		Token2 = "token card"
 		Synchro = "synchro monster"
+		Link = "link monster"
 		Spell = "spell card"
 		Trap = "trap card"
 		Special = {10000000 => "obelisk", 10000010 => "ra", 10000020 => "slifer"} 
@@ -110,4 +112,7 @@ module MSEConstants
 
 	SetFileName = "set"
 	SingleFileMaxCount = 200
+
+	LinkMarkerHead = "Link Marker "
+	LinkMarks = ["DL", "Down", "DR", "Left", "", "Right", "UL", "Up", "UR"]
 end

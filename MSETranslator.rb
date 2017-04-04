@@ -47,6 +47,11 @@ module MSETranslator
 		else
 			file.write self.generate_text MSEConstants::MSETags::TagText, YGOCoreJudgers.get_desc(card)
 		end
+		# Link data
+		if YGOCoreJudgers.is_link card
+			file.write self.generate_line MSEConstants::MSETags::TagLink, YGOCoreJudgers.get_link(card)
+			write_link_lines file, card
+		end
 		file.write self.generate_line MSEConstants::MSETags::TagAtk, YGOCoreJudgers.get_attack(card)
 		file.write self.generate_line MSEConstants::MSETags::TagDef, YGOCoreJudgers.get_defense(card)
 		file.write self.generate_line MSEConstants::MSETags::TagCode, YGOCoreJudgers.get_id(card).to_s
@@ -61,6 +66,11 @@ module MSETranslator
 		file.write self.generate_line MSEConstants::MSETags::TagImage, YGOCoreJudgers.get_image_str(card)
 		file.write self.generate_text MSEConstants::MSETags::TagText, YGOCoreJudgers.get_desc(card)
 		file.write self.generate_line MSEConstants::MSETags::TagCode, YGOCoreJudgers.get_id(card).to_s
+	end
+
+	def write_link_lines(file, card)
+		markers = YGOCoreJudgers.get_link_marks card
+		(0..8).each { |i| file.write self.generate_line MSEConstants::LinkMarkerHead + MSEConstants::LinkMarks[i], 'yes' if markers[i] }
 	end
 
 	LineHead = "\t"#"	"

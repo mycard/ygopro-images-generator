@@ -138,6 +138,14 @@ module YGOCoreJudgers
 		return card[ColumnType] & YGOCoreConstants::Type::Pendulum != 0
 	end
 
+	def is_spsummon(card)
+		return card[ColumnType] & YGOCoreConstants::Type::SpSummon != 0
+	end
+
+	def is_link(card)
+		return card[ColumnType] & YGOCoreConstants::Type::Link != 0
+	end
+
 	def get_id(card)
 		return card[ColumnID].to_i
 	end
@@ -163,14 +171,27 @@ module YGOCoreJudgers
 	def get_defense(card)
 		value = card[ColumnDef].to_i
 		return "?" if value == YGOCoreConstants::QuestionMark
+		return "" if self.is_link card
 		value
 	end
 
+	def get_link(card)
+		return "" unless self.is_link card
+		return card[ColumnLevel].to_i
+	end
+
+	def get_link_marks(card)
+		value = card[ColumnDef]
+		sprintf("%09b", value).scan(/\d/).reverse.map { |s| s == '1' }
+	end
+
 	def get_level(card)
+		return 0 if self.is_link card
 		return card[ColumnLevel].to_i % YGOCoreConstants::PendulumLeftMod
 	end
 
 	def get_monster_level_str(card)
+		return "" if self.is_link card
 		return MSEConstants::MSESpellTrap::Level * self.get_level(card)
 	end
 
@@ -309,6 +330,8 @@ module YGOCoreJudgers
 				return MSEConstants::MSECardType::Fusion
 			elsif self.is_sync card
 				return MSEConstants::MSECardType::Synchro
+			elsif self.is_link card
+				return MSEConstants::MSECardType::Link
 			elsif self.is_effect card
 				return MSEConstants::MSECardType::Effect
 			end
@@ -326,7 +349,9 @@ module YGOCoreJudgers
 		types.push LanguageConstants.current.term_fusion if self.is_fusion card
 		types.push LanguageConstants.current.term_synchro if self.is_sync card
 		types.push LanguageConstants.current.term_pendulum if self.is_pendulum card
+		types.push LanguageConstants.current.term_link if self.is_link card
 		# 子类别
+		types.push LanguageConstants.current.term_spsummon if self.is_spsummon card
 		types.push LanguageConstants.current.term_spirit if self.is_spirit card
 		types.push LanguageConstants.current.term_union if self.is_union card
 		types.push LanguageConstants.current.term_dual if self.is_dual card

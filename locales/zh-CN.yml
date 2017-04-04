@@ -23,6 +23,8 @@ zh-CN:
     cartoon: "卡通"
     xyz: "超量"
     pendulum: "灵摆"
+    spsummon: "特殊召唤"
+    link: "连接"
     races:
       - ""
       - "战士族"
@@ -49,6 +51,7 @@ zh-CN:
       - "幻兽神族"
       - "创世神族"
       - "幻龙族"
+      - "电子界族"
   pendulum_effect_head: !ruby/regexp /←\d+ 【灵摆】 \d+→\n?/
   monster_effect_head: !ruby/regexp /(\n)*(?:【怪兽效果】|【怪兽简介】|【怪兽描述】)\n/
   mse_language: cn
