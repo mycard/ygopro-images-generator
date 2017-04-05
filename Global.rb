@@ -18,7 +18,7 @@ module Global
 		attr_accessor :sql_fix_name
 	end
 	self.language = 'zh-CN'
-	self.raw_image_path = 'ygopro-images-raw/pics/'
+	self.raw_image_path = 'pics/'
 	self.database_path = 'ygopro-database/locales/'
 	self.git_uri = 'https://github.com/mycard/ygopro-images-raw.git'
 	self.database_name = '%s.cdb'
