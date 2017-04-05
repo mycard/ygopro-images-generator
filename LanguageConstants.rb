@@ -25,6 +25,8 @@ class LanguageConstants
 	attr_accessor :term_cartoon
 	attr_accessor :term_xyz
 	attr_accessor :term_pendulum
+	attr_accessor :term_link
+	attr_accessor :term_spsummon
 	attr_accessor :pendulum_effect_head
 	attr_accessor :monster_effect_head
 	attr_accessor :term_races # 偷个鸡

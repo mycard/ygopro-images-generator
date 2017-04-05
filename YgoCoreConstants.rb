@@ -37,6 +37,7 @@ module YGOCoreConstants
 		Devine = 0x200000     # 幻兽神
 		Creatorgod = 0x400000 # 创世神
 		Wyrm = 0x800000       # 幻龙
+		Cyverse = 0x1000000   # 电子界
 	end
 
 	module Rule
@@ -71,6 +72,8 @@ module YGOCoreConstants
 		Cartoon = 0x400000    # 卡通
 		Xyz = 0x800000        # Xyz
 		Pendulum = 0x1000000  # 灵摆
+		SpSummon = 0x2000000  # 特殊召唤
+		Link = 0x4000000      # 连接
 	end
 
 	PendulumLeftMod = 65536

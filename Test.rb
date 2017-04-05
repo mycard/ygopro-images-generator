@@ -29,4 +29,12 @@ def unit_test_god
   p MSETranslator.split_effect YGOCoreJudgers.get_desc(Sqlite.load(17390179)[0])
 end
 
-unit_test_god
+def link_test
+  require './Commands.rb'
+  Commands.generate_all
+end
+
+def god_test
+  require './Commands.rb'
+  MSETranslator.generate_mse Sqlite.load(10000010)
+end

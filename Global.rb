@@ -3,6 +3,7 @@
 module Global
 	class << self
 		attr_accessor :language
+		attr_accessor :raw_image_path
 		attr_accessor :git_path
 		attr_accessor :git_uri
 		attr_accessor :database_path
@@ -17,8 +18,8 @@ module Global
 		attr_accessor :sql_fix_name
 	end
 	self.language = 'zh-CN'
-	self.git_path = 'pics'
-	self.database_path = 'ygopro-database'
+	self.raw_image_path = 'ygopro-images-raw/pics/'
+	self.database_path = 'ygopro-database/locales/'
 	self.git_uri = 'https://github.com/mycard/ygopro-images-raw.git'
 	self.database_name = '%s.cdb'
 	self.temp_database_name = "working-cards.cdb"
@@ -31,11 +32,11 @@ module Global
 	self.mse_set_path = "mse-sets"
 	module_function
 	def full_database_path
-		return File.join self.database_path, sprintf(self.database_name, self.language)
+		return self.database_path + self.language + "/cards.cdb"
 	end
 
 	def full_image_path
-		return self.git_path
+		return self.raw_image_path
 	end
 
 	def full_answer_path
