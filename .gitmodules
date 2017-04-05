@@ -1,4 +1,4 @@
 [submodule "ImgGen"]
 	path = ImgGen
-	url = git@github.com:mycard/ImgGen.git
+	url = git@github.com:moecube/ImgGen.git
 	shallow = true
