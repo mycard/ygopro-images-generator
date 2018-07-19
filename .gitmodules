@@ -1,4 +1,4 @@
 [submodule "ImgGen"]
 	path = ImgGen
-	url = git@github.com:moecube/ImgGen.git
+	url = https://github.com/moecube/ImgGen
 	shallow = true
